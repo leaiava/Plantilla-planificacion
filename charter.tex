@@ -7,7 +7,7 @@ codirector, % Uncomment to add a codirector to the title page
 
 
 % El títulos de la memoria, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \ttitle
-\titulo{Título del proyecto} 
+\titulo{Firmware de dispositivo de adquisición de señales neurofisiológicas} 
 
 % Nombre del posgrado, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \degreename
 \posgrado{Carrera de Especialización en Sistemas Embebidos} 
@@ -17,14 +17,14 @@ codirector, % Uncomment to add a codirector to the title page
 %\posgrado{Maestría en Internet de las cosas}
 
 % Tu nombre, se puede usar el cualquier lugar del documento con el comando \authorname
-\autor{Nombre del Autor} 
+\autor{Leandro Arrieta} 
 
 % El nombre del director y co-director, se puede usar el cualquier lugar del documento con el comando \supname y \cosupname y \pertesupname y \pertecosupname
-\director{Nombre del Director}
+\director{Diego Coulombie}
 \pertenenciaDirector{pertenencia} 
 % FIXME:NO IMPLEMENTADO EL CODIRECTOR ni su pertenencia
-\codirector{John Doe} % para que aparezca en la portada se debe descomentar la opción codirector en el documentclass
-\pertenenciaCoDirector{FIUBA}
+\codirector{Ariel Gentile} % para que aparezca en la portada se debe descomentar la opción codirector en el documentclass
+\pertenenciaCoDirector{UTN FRH}
 
 % Nombre del cliente, quien va a aprobar los resultados del proyecto, se puede usar con el comando \clientename y \empclientename
 \cliente{Nombre del cliente}
@@ -92,7 +92,7 @@ Buenos Aires, \fechaInicioName
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con el Ing. \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en \textcolor{red}{la implementación de un prototipo de un sistema de control de temperatura de un calefón}, y tendrá un presupuesto preliminar estimado de \textcolor{red}{600} hs de trabajo y \textcolor{red}{\$XXX}, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
+Por medio de la presente se acuerda con el Ing. \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en el desarrollo y la implementación del firmware del dispositivo perteneciente al proyecto de investigación ''C2-ING-066 Herramientas de uso comunitario para el desarrollo de la industria de Tecnología Neurofisiológica", y tendrá un presupuesto preliminar estimado de \textcolor{red}{600} hs de trabajo y \textcolor{red}{\$XXX}, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -116,38 +116,53 @@ Se adjunta a esta acta la planificación inicial.
 \label{sec:descripcion}
 
 
-\begin{consigna}{red} % El bloque "consigna" se usa para poner texto en rojo y dar una pequeña ayuda sobre cómo completar la sección
+La Neurofisiología es una rama de las neurociencias, que se encarga del estudio funcional de la actividad bioeléctrica del sistema nervioso central, periférico y autonómico, mediante la utilización de equipos y técnicas de análisis avanzado, como la Electroencefalografía (EEG), la Electromiografía (EMG), los Potenciales Evocados (PE), la Polisomnografía (PSG) y otras nuevas técnicas como el neuromonitoreo (NM) o la medición de profundidad de anestésica (MPA). En el país hay al menos 4 empresas que diseñan y fabrican este equipamiento no existiendo un caso similar de competencia en otros países de la región. El costo de desarrollar un equipamiento médico siempre fue elevado. Hace ya muchos años que se implementan regulaciones a los productos que son cada vez mas exigentes en materia de seguridad y eficacia. Sumado a esto los cambios tecnológicos en electrónica y comunicaciones, causan que las empresas locales no puedan seguir esa evolución por ser proyectos económicamente inviables, dejando que sus productos con diseños obsoletos sean paulatinamente expulsados del mercado por su pobre demanda. 
 
-El objetivo es que el lector en una o dos páginas entienda de qué se trata el proyecto y cuáles son sus desafíos, su motivación y su importancia.
+El proyecto de investigación ''C2-ING-066 Herramientas de uso comunitario para el desarrollo de la industria de Tecnología Neurofisiológica" propone generar una plataforma de adquisición de señales neurofisiológicas, que sea de uso común para todos los fabricantes de equipos del subsector, para investigación en las universidades y para el eventual desarrollo de nuevos productos y nuevas empresas tecnológicas. El alcance de la plataforma facilitaría el cumplimiento de los requisitos regulatorios; como los de seguridad, análisis de riesgos y compatibilidad electromagnética, dejando a cargo del fabricante la adecuación de ergonomía y usabilidad para cada uso previsto. La existencia de un dispositivo de uso común cuyo costo de diseño, manufactura y ensayos se amortiza entre varios fabricantes, da la posibilidad de destinar mas recursos en actividades que generen un mayor valor agregado, como software más complejo, innovación en algoritmos o interfaces más eficientes y seguras, potenciando de esta manera al subsector industrial en particular y al de las neurociencias en general. En el marco de ese proyecto nace esta propuesta para darle vida al primer prototipo que tienen armado pero que le falta la programación del sistema embebido.
 
-Se debe destacar claramente cuál es el valor que agrega el proyecto a realizar. ``El presente proyecto se destaca especialmente por incorporar tal cosa... Esto lo diferencia de otros sistemas similares en que ...''
-
-Puede ser útil incluir en esta sección la respuesta a alguna de estas preguntas:
-
-\begin{itemize}
-	\item ¿Cómo se vincula este proyecto con la misión de la organización?
-	\item ¿Cómo se inserta este proyecto en el modelo de negocio de la organización?
-	\item ¿Ayuda a la explicación si se incluye un lienzo Canvas del Modelo de Negocio?
-	\item ¿En qué estado del ciclo de vida está el producto que se desea reemplazar o mejorar?
-	\item ¿Cuáles son las necesidades que debe satisfacer?
-	\item ¿Por dónde pasa la innovación?
-\end{itemize}
-
-La descripción técnica-conceptual \textbf{debe incluir al menos un diagrama en bloques del sistema} y una frase como la siguiente: ``En la Figura \ref{fig:diagBloques} se presenta el diagrama en bloques del sistema. Se observa que...''. Luego recién más abajo de haber puesto esta frase, se pone la figura. La regla es que las figuras nunca pueden ir antes de ser mencionadas en el texto, porque sino el lector no entiende por qué de pronto aparece una figura.
-
-%\vspace{25px}
+El dispositivo de adquisición de señales neurofisiológicas a desarrollar, a partir de ahora llamado DASN, será parte de un sistema médico por lo que el firmware se debe desarrollar cumpliendo los estandares de la industria médica. En la figura \ref{fig:diagBloquesSistema} se puede ver un diagrama en bloques del sistema. Se observa que estará formado por un equipo de registro, por el DASN y eventualmente por un estimulador externo. 
 
 \begin{figure}[htpb]
 \centering 
-\includegraphics[width=.5\textwidth]{./Figuras/diagBloques.png}
+\includegraphics[width=0.9\textwidth]{./Figuras/DiagramaEnBloquesDASN.pdf}
 \caption{Diagrama en bloques del sistema}
-\label{fig:diagBloques}
+\label{fig:diagBloquesSistema}
 \end{figure}
 
-\vspace{25px}
+El DASN tendrá 8 canales de entrada para adquirir las señales neurofisiológicas del paciente. El dispositivo de registro mediante comandos que enviará vía inalámbrica o vía cableada configurará el DASN. Cuando el equipo de registro lo requiera, podrá configurar el DASN para que la señal adquirida se pueda sincronizar con un estimulador externo, pudiendo funcionar el estimulador como master o slave.
 
-El tamaño de la tipografía en TODAS las figuras debe ser adecuado para que NO pase lo que ocurre acá, donde el lector debe esforzarse para poder leer el texto. Los colores usados en el diagrama deben ser adecuados, tal que ayuden a comprender mejor el diagrama, preferentemente en la gama de colores pastel.
-\end{consigna}
+%\begin{consigna}{red} % El bloque "consigna" se usa para poner texto en rojo y dar una pequeña ayuda sobre cómo completar la sección
+%
+%El objetivo es que el lector en una o dos páginas entienda de qué se trata el proyecto y cuáles son sus desafíos, su motivación y su importancia.
+%
+%Se debe destacar claramente cuál es el valor que agrega el proyecto a realizar. ``El presente proyecto se destaca especialmente por incorporar tal cosa... Esto lo diferencia de otros sistemas similares en que ...''
+%
+%Puede ser útil incluir en esta sección la respuesta a alguna de estas preguntas:
+%
+%\begin{itemize}
+%	\item ¿Cómo se vincula este proyecto con la misión de la organización?
+%	\item ¿Cómo se inserta este proyecto en el modelo de negocio de la organización?
+%	\item ¿Ayuda a la explicación si se incluye un lienzo Canvas del Modelo de Negocio?
+%	\item ¿En qué estado del ciclo de vida está el producto que se desea reemplazar o mejorar?
+%	\item ¿Cuáles son las necesidades que debe satisfacer?
+%	\item ¿Por dónde pasa la innovación?
+%\end{itemize}
+%
+%La descripción técnica-conceptual \textbf{debe incluir al menos un diagrama en bloques del sistema} y una frase como la siguiente: ``En la Figura \ref{fig:diagBloques} se presenta el diagrama en bloques del sistema. Se observa que...''. Luego recién más abajo de haber puesto esta frase, se pone la figura. La regla es que las figuras nunca pueden ir antes de ser mencionadas en el texto, porque sino el lector no entiende por qué de pronto aparece una figura.
+%
+%%\vspace{25px}
+%
+%\begin{figure}[htpb]
+%\centering 
+%\includegraphics[width=.5\textwidth]{./Figuras/diagBloques.png}
+%\caption{Diagrama en bloques del sistema}
+%\label{fig:diagBloques}
+%\end{figure}
+%
+%\vspace{25px}
+%
+%El tamaño de la tipografía en TODAS las figuras debe ser adecuado para que NO pase lo que ocurre acá, donde el lector debe esforzarse para poder leer el texto. Los colores usados en el diagrama deben ser adecuados, tal que ayuden a comprender mejor el diagrama, preferentemente en la gama de colores pastel.
+%\end{consigna}
 
 
 \section{2. Identificación y análisis de los interesados}
