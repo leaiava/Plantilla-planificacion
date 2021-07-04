@@ -27,8 +27,8 @@ codirector, % Uncomment to add a codirector to the title page
 \pertenenciaCoDirector{UTN FRH}
 
 % Nombre del cliente, quien va a aprobar los resultados del proyecto, se puede usar con el comando \clientename y \empclientename
-\cliente{Nombre del cliente}
-\empresaCliente{Empresa del cliente}
+\cliente{\supname}
+\empresaCliente{UNLaM}
 
 % Nombre y pertenencia de los jurados, se pueden usar el cualquier lugar del documento con el comando \jurunoname, \jurdosname y \jurtresname y \perteunoname, \pertedosname y \pertetresname.
 \juradoUno{Nombre y Apellido (1)}
@@ -68,8 +68,8 @@ codirector, % Uncomment to add a codirector to the title page
 \hline
 \rowcolor[HTML]{C0C0C0} 
 Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios realizados} & Fecha      \\ \hline
-0      & Creación del documento                                 &\fechaInicioName \\ \hline
-%1      & Se completa hasta el punto 4 inclusive                 & dd/mm/aaaa \\ \hline
+0      & Creación del documento                                 & 01/07/2012 \\ \hline
+1.0      & Se completa hasta la sección 5 inclusive                 & 04/07/2012 \\ \hline
 %2      & Se completa hasta el punto 7 inclusive
 %		  Se puede agregar algo más \newline
 %		  En distintas líneas \newline
@@ -118,13 +118,13 @@ Se adjunta a esta acta la planificación inicial.
 
 La Neurofisiología es una rama de las neurociencias, que se encarga del estudio funcional de la actividad bioeléctrica del sistema nervioso central, periférico y autonómico, mediante la utilización de equipos y técnicas de análisis avanzado, como la Electroencefalografía (EEG), la Electromiografía (EMG), los Potenciales Evocados (PE), la Polisomnografía (PSG) y otras nuevas técnicas como el neuromonitoreo (NM) o la medición de profundidad de anestésica (MPA). En el país hay al menos 4 empresas que diseñan y fabrican este equipamiento no existiendo un caso similar de competencia en otros países de la región. El costo de desarrollar un equipamiento médico siempre fue elevado. Hace ya muchos años que se implementan regulaciones a los productos que son cada vez mas exigentes en materia de seguridad y eficacia. Sumado a esto los cambios tecnológicos en electrónica y comunicaciones, causan que las empresas locales no puedan seguir esa evolución por ser proyectos económicamente inviables, dejando que sus productos con diseños obsoletos sean paulatinamente expulsados del mercado por su pobre demanda. 
 
-El proyecto de investigación ''C2-ING-066 Herramientas de uso comunitario para el desarrollo de la industria de Tecnología Neurofisiológica" propone generar una plataforma de adquisición de señales neurofisiológicas, que sea de uso común para todos los fabricantes de equipos del subsector, para investigación en las universidades y para el eventual desarrollo de nuevos productos y nuevas empresas tecnológicas. El alcance de la plataforma facilitaría el cumplimiento de los requisitos regulatorios; como los de seguridad, análisis de riesgos y compatibilidad electromagnética, dejando a cargo del fabricante la adecuación de ergonomía y usabilidad para cada uso previsto. La existencia de un dispositivo de uso común cuyo costo de diseño, manufactura y ensayos se amortiza entre varios fabricantes, da la posibilidad de destinar mas recursos en actividades que generen un mayor valor agregado, como software más complejo, innovación en algoritmos o interfaces más eficientes y seguras, potenciando de esta manera al subsector industrial en particular y al de las neurociencias en general. En el marco de ese proyecto nace esta propuesta para darle vida al primer prototipo que tienen armado pero que le falta la programación del sistema embebido.
+El proyecto de investigación ''C2-ING-066 Herramientas de uso comunitario para el desarrollo de la industria de Tecnología Neurofisiológica" de la UNLaM propone generar una plataforma de adquisición de señales neurofisiológicas, que sea de uso común para todos los fabricantes de equipos del subsector, para investigación en las universidades y para el eventual desarrollo de nuevos productos y nuevas empresas tecnológicas. El alcance de la plataforma facilitaría el cumplimiento de los requisitos regulatorios; como los de seguridad, análisis de riesgos y compatibilidad electromagnética, dejando a cargo del fabricante la adecuación de ergonomía y usabilidad para cada uso previsto. La existencia de un dispositivo de uso común cuyo costo de diseño, manufactura y ensayos se amortiza entre varios fabricantes, da la posibilidad de destinar mas recursos en actividades que generen un mayor valor agregado, como software más complejo, innovación en algoritmos o interfaces más eficientes y seguras, potenciando de esta manera al subsector industrial en particular y al de las neurociencias en general. En el marco de ese proyecto nace esta propuesta para darle vida al primer prototipo que tienen armado pero que le falta la programación del sistema embebido.
 
-El dispositivo de adquisición de señales neurofisiológicas a desarrollar, a partir de ahora llamado DASN, será parte de un sistema médico por lo que el firmware se debe desarrollar cumpliendo los estandares de la industria médica. En la figura \ref{fig:diagBloquesSistema} se puede ver un diagrama en bloques del sistema. Se observa que estará formado por un equipo de registro, por el DASN y eventualmente por un estimulador externo. 
+El dispositivo de adquisición de señales neurofisiológicas a desarrollar, a partir de ahora llamado DASN, será parte de un sistema médico, por lo que el firmware se debe desarrollar cumpliendo los estandares de tal industria. En la figura \ref{fig:diagBloquesSistema} se puede ver un diagrama en bloques del sistema. Se observa que estará formado por un equipo de registro, por el DASN y eventualmente por un estimulador externo. 
 
 \begin{figure}[htpb]
 \centering 
-\includegraphics[width=0.9\textwidth]{./Figuras/DiagramaEnBloquesDASN.pdf}
+\includegraphics[width=0.95\textwidth]{./Figuras/DiagramaEnBloquesDASN.pdf}
 \caption{Diagrama en bloques del sistema}
 \label{fig:diagBloquesSistema}
 \end{figure}
@@ -163,24 +163,22 @@ El DASN tendrá 8 canales de entrada para adquirir las señales neurofisiológic
 %
 %El tamaño de la tipografía en TODAS las figuras debe ser adecuado para que NO pase lo que ocurre acá, donde el lector debe esforzarse para poder leer el texto. Los colores usados en el diagrama deben ser adecuados, tal que ayuden a comprender mejor el diagrama, preferentemente en la gama de colores pastel.
 %\end{consigna}
-
-
 \section{2. Identificación y análisis de los interesados}
 \label{sec:interesados}
 
-\begin{consigna}{red} 
-Nota: (borrar esto y todas las consignas en color rojo antes de entregar este documento).
- 
-Es inusual que una misma persona esté en más de un rol, incluso en proyectos chicos.
- 
-Si se considera que una persona cumple dos o más roles, entonces sólo dejarla en el rol más importante. Por ejemplo:
-
-\begin{itemize}
-\item Si una persona es Cliente pero también colabora u orienta, dejarla solo como Cliente.
-\item Si una persona es el Responsable, no debe ser colocado también como Miembro del equipo.
-\end{itemize}
-
-Pero en cambio sí es usual que el Cliente y el Auspiciante sean el mismo, por ejemplo.
+%\begin{consigna}{red} 
+%Nota: (borrar esto y todas las consignas en color rojo antes de entregar este documento).
+% 
+%Es inusual que una misma persona esté en más de un rol, incluso en proyectos chicos.
+% 
+%Si se considera que una persona cumple dos o más roles, entonces sólo dejarla en el rol más importante. Por ejemplo:
+%
+%\begin{itemize}
+%\item Si una persona es Cliente pero también colabora u orienta, dejarla solo como Cliente.
+%\item Si una persona es el Responsable, no debe ser colocado también como Miembro del equipo.
+%\end{itemize}
+%
+%Pero en cambio sí es usual que el Cliente y el Auspiciante sean el mismo, por ejemplo.
 
 \begin{table}[ht]
 %\caption{Identificación de los interesados}
@@ -189,430 +187,448 @@ Pero en cambio sí es usual que el Cliente y el Auspiciante sean el mismo, por e
 \hline
 \rowcolor[HTML]{C0C0C0} 
 Rol           & Nombre y Apellido & Organización 	& Puesto 	\\ \hline
-Auspiciante   &                   &              	&        	\\ \hline
-Cliente       & \clientename      &\empclientename	&        	\\ \hline
-Impulsor      &                   &              	&        	\\ \hline
+Auspiciante   & \supname          &\pertesupname  	& Director trabajo final       	\\ \hline
+Cliente       & \clientename      &\empclientename	& Director trabajo final     	\\ \hline
+%Impulsor      &                   &              	&        	\\ \hline
 Responsable   & \authorname       & FIUBA        	& Alumno 	\\ \hline
-Colaboradores &                   &              	&        	\\ \hline
-Orientador    & \supname	      & \pertesupname 	& Director Trabajo final \\ \hline
-Equipo        & miembro1 \newline 
-				miembro2          &              	&        	\\ \hline
-Opositores    &                   &              	&        	\\ \hline
-Usuario final &                   &              	&        	\\ \hline
+%Colaboradores &                   &              	&        	\\ \hline
+Orientador    & \supname	      & \pertesupname   & Director trabajo final \\ \hline
+Orientador    & \cosupname	      & \pertecosupname   & Codirector trabajo final \\ \hline
+Equipo        & \authorname 	  & FIUBA         	& Alumno  	\\ \hline
+%Opositores    &                   &              	&        	\\ \hline
+%Usuario final &                   &              	&        	\\ \hline
 \end{tabularx}
 \end{table}
 
-El Director suele ser uno de los Orientadores.
-
-No dejar celdas vacías; si no hay nada que poner en una celda colocar un signo ``-''.
-
-No dejar filas vacías; si no hay nada que poner en una fila entonces eliminarla.
-
-Es deseable listar a continuación las principales características de cada interesado.
- 
-Por ejemplo:
-\begin{itemize}
-	\item Auspiciante: es riguroso y exigente con la rendición de gastos. Tener mucho cuidado con esto.
-	\item Equipo: Juan Perez, suele pedir licencia porque tiene un familiar con una enfermedad. Planificar considerando esto.
-	\item Orientador: María Gómez va a poder ayudar mucho con la definición de los requerimientos.
-\end{itemize}
-
-\end{consigna}
-
-
+%El Director suele ser uno de los Orientadores.
+%
+%No dejar celdas vacías; si no hay nada que poner en una celda colocar un signo ``-''.
+%
+%No dejar filas vacías; si no hay nada que poner en una fila entonces eliminarla.
+%
+%Es deseable listar a continuación las principales características de cada interesado.
+% 
+%Por ejemplo:
+%\begin{itemize}
+%	\item Auspiciante: es riguroso y exigente con la rendición de gastos. Tener mucho cuidado con esto.
+%	\item Equipo: Juan Perez, suele pedir licencia porque tiene un familiar con una enfermedad. Planificar considerando esto.
+%	\item Orientador: María Gómez va a poder ayudar mucho con la definición de los requerimientos.
+%\end{itemize}
+%
+%\end{consigna}
 
 \section{3. Propósito del proyecto}
 \label{sec:proposito}
 
-\begin{consigna}{red}
-¿Por qué se hace el proyecto? ¿Qué se quiere lograr? 
+El propósito de este proyecto es poner en práctica todos los conocimientos adquiridos durante la carrera de especialización y lograr a modo de objetivo personal llevar a cabo una gestión de proyecto ordenada. Colaborar con el proyecto ''C2-ING-066 Herramientas de uso comunitario para el desarrollo de la industria de Tecnología Neurofisiológica", y a su vez, completar con los requisitos de aprobación de la CESE.
 
-Se recomienda que sea solo un párrafo que empiece diciendo ``El propósito de este proyecto es...''.
-\end{consigna}
+%\begin{consigna}{red}
+%¿Por qué se hace el proyecto? ¿Qué se quiere lograr? 
+%
+%Se recomienda que sea solo un párrafo que empiece diciendo ``El propósito de este proyecto es...''.
+%\end{consigna}
 
 \section{4. Alcance del proyecto}
 \label{sec:alcance}
 
-\begin{consigna}{red}
-¿Qué se incluye y que no se incluye en este proyecto?
+El presente proyecto incluye:
+\begin{itemize}
+	\item Diseño del firmware embebido del DASN.
+	\item Diseño del protocolo de comunicación entre DASN y equipo de registro.
+	\item Documentación acorde a ISO 62304.
+	\item Software de prueba para simular un equipo de registro y probar el DASN.
+\end{itemize}
 
-Se refiere al trabajo a hacer para entregar el producto o resultado especificado. 
+El presente proyecto no incluye:
+\begin{itemize}
+	\item Diseño de hardware.
+\end{itemize}
 
-Explicitar todo lo quede comprendido dentro del alcance del proyecto.
-
-Explicitar además todo lo que no quede incluido (``El presente proyecto no incluye...'')
-
-\end{consigna}
+%\begin{consigna}{red}
+%¿Qué se incluye y que no se incluye en este proyecto?
+%
+%Se refiere al trabajo a hacer para entregar el producto o resultado especificado. 
+%
+%Explicitar todo lo quede comprendido dentro del alcance del proyecto.
+%
+%Explicitar además todo lo que no quede incluido (``El presente proyecto no incluye...'')
+%
+%\end{consigna}
 
 
 \section{5. Supuestos del proyecto}
 \label{sec:supuestos}
 
-\begin{consigna}{red}
-``Para el desarrollo del presente proyecto se supone que: ...''
+Para el desarrollo del presente proyecto se supone que el cliente proveerá del hardware en funcionamiento.
+%\begin{itemize}
+%	\item El cliente proveerá del hardware necesario para el desarrollo del firmware
+%\end{itemize}
 
-\begin{itemize}
-	\item Supuesto 1
-	\item Supuesto 2...
-\end{itemize}
-
-Por ejemplo, se podrían incluir supuestos respecto a disponibilidad de tiempo y recursos humanos y materiales, sobre la factibilidad técnica de distintos aspectos del proyecto, sobre otras cuestiones que sean necesarias para el éxito del proyecto como condiciones macroeconómicas o reglamentarias.
-\end{consigna}
+%\begin{consigna}{red}
+%``Para el desarrollo del presente proyecto se supone que: ...''
+%
+%\begin{itemize}
+%	\item Supuesto 1
+%	\item Supuesto 2...
+%\end{itemize}
+%
+%Por ejemplo, se podrían incluir supuestos respecto a disponibilidad de tiempo y recursos humanos y materiales, sobre la factibilidad técnica de distintos aspectos del proyecto, sobre otras cuestiones que sean necesarias para el éxito del proyecto como condiciones macroeconómicas o reglamentarias.
+%\end{consigna}
 
 \section{6. Requerimientos}
 \label{sec:requerimientos}
 
-\begin{consigna}{red}
-Los requerimientos deben numerarse y de ser posible estar agruparlos por afinidad, por ejemplo:
-
-\begin{enumerate}
-	\item Requerimientos funcionales
-		\begin{enumerate}
-			\item El sistema debe...
-			\item Tal componente debe...
-			\item El usuario debe poder...
-		\end{enumerate}
-	\item Requerimientos de documentación
-		\begin{enumerate}
-			\item Requerimiento 1
-			\item Requerimiento 2 (prioridad menor)
-		\end{enumerate}
-	\item Requerimiento de testing...
-	\item Requerimientos de la interfaz...
-	\item Requerimientos interoperabilidad...
-	\item etc...
-\end{enumerate}
-
-Leyendo los requerimientos se debe poder interpretar cómo será el proyecto y su funcionalidad.
-
-Indicar claramente cuál es la prioridad entre los distintos requerimientos y si hay requerimientos opcionales. 
-
-No olvidarse de que los requerimientos incluyen a las regulaciones y normas vigentes!!!
-
-Y al escribirlos seguir las siguientes reglas:
-\begin{itemize}
-	\item Ser breve y conciso (nadie lee cosas largas). 
-	\item Ser específico: no dejar lugar a confusiones.
-	\item Expresar los requerimientos en términos que sean cuantificables y medibles.
-\end{itemize}
-
-\end{consigna}
+%\begin{consigna}{red}
+%Los requerimientos deben numerarse y de ser posible estar agruparlos por afinidad, por ejemplo:
+%
+%\begin{enumerate}
+%	\item Requerimientos funcionales
+%		\begin{enumerate}
+%			\item El sistema debe...
+%			\item Tal componente debe...
+%			\item El usuario debe poder...
+%		\end{enumerate}
+%	\item Requerimientos de documentación
+%		\begin{enumerate}
+%			\item Requerimiento 1
+%			\item Requerimiento 2 (prioridad menor)
+%		\end{enumerate}
+%	\item Requerimiento de testing...
+%	\item Requerimientos de la interfaz...
+%	\item Requerimientos interoperabilidad...
+%	\item etc...
+%\end{enumerate}
+%
+%Leyendo los requerimientos se debe poder interpretar cómo será el proyecto y su funcionalidad.
+%
+%Indicar claramente cuál es la prioridad entre los distintos requerimientos y si hay requerimientos opcionales. 
+%
+%No olvidarse de que los requerimientos incluyen a las regulaciones y normas vigentes!!!
+%
+%Y al escribirlos seguir las siguientes reglas:
+%\begin{itemize}
+%	\item Ser breve y conciso (nadie lee cosas largas). 
+%	\item Ser específico: no dejar lugar a confusiones.
+%	\item Expresar los requerimientos en términos que sean cuantificables y medibles.
+%\end{itemize}
+%
+%\end{consigna}
 
 \section{7. Historias de usuarios (\textit{Product backlog})}
 \label{sec:backlog}
 
-\begin{consigna}{red}
-Descripción: En esta sección se deben incluir las historias de usuarios y su ponderación (\textit{history points}). Recordar que las historias de usuarios son descripciones cortas y simples de una característica contada desde la perspectiva de la persona que desea la nueva capacidad, generalmente un usuario o cliente del sistema. La ponderación es un número entero que representa el tamaño de la historia comparada con otras historias de similar tipo.
-
-El formato propuesto es: "como [rol] quiero [tal cosa] para [tal otra cosa]."
-
-Se debe indicar explícitamente el criterio para calcular los \textit{story points} de cada historia
-\end{consigna}
+%\begin{consigna}{red}
+%Descripción: En esta sección se deben incluir las historias de usuarios y su ponderación (\textit{history points}). Recordar que las historias de usuarios son descripciones cortas y simples de una característica contada desde la perspectiva de la persona que desea la nueva capacidad, generalmente un usuario o cliente del sistema. La ponderación es un número entero que representa el tamaño de la historia comparada con otras historias de similar tipo.
+%
+%El formato propuesto es: "como [rol] quiero [tal cosa] para [tal otra cosa]."
+%
+%Se debe indicar explícitamente el criterio para calcular los \textit{story points} de cada historia
+%\end{consigna}
 
 \section{8. Entregables principales del proyecto}
 \label{sec:entregables}
 
-\begin{consigna}{red}
-
-Los entregables del proyecto son (ejemplo):
-
-\begin{itemize}
-	\item Manual de uso
-	\item Diagrama de circuitos esquemáticos
-	\item Código fuente del firmware
-	\item Diagrama de instalación
-	\item Informe final
-	\item etc...
-\end{itemize}
-
-\end{consigna}
+%\begin{consigna}{red}
+%
+%Los entregables del proyecto son (ejemplo):
+%
+%\begin{itemize}
+%	\item Manual de uso
+%	\item Diagrama de circuitos esquemáticos
+%	\item Código fuente del firmware
+%	\item Diagrama de instalación
+%	\item Informe final
+%	\item etc...
+%\end{itemize}
+%
+%\end{consigna}
 
 \section{9. Desglose del trabajo en tareas}
 \label{sec:wbs}
 
-\begin{consigna}{red}
-El WBS debe tener relación directa o indirecta con los requerimientos.  Son todas las actividades que se harán en el proyecto para dar cumplimiento a los requerimientos. Se recomienda mostrar el WBS mediante una lista indexada:
-
-\begin{enumerate}
-\item Grupo de tareas 1
-	\begin{enumerate}
-	\item Tarea 1 (tantas hs)
-	\item Tarea 2 (tantas hs)
-	\item Tarea 3 (tantas hs)
-	\end{enumerate}
-\item Grupo de tareas 2
-	\begin{enumerate}
-	\item Tarea 1 (tantas hs)
-	\item Tarea 2 (tantas hs)
-	\item Tarea 3 (tantas hs)
-	\end{enumerate}
-\item Grupo de tareas 3
-	\begin{enumerate}
-	\item Tarea 1 (tantas hs)
-	\item Tarea 2 (tantas hs)
-	\item Tarea 3 (tantas hs)
-	\item Tarea 4 (tantas hs)
-	\item Tarea 5 (tantas hs)
-	\end{enumerate}
-\end{enumerate}
-
-Cantidad total de horas: (tantas hs)
-
-Se recomienda que no haya ninguna tarea que lleve más de 40 hs. 
-
-\end{consigna}
+%\begin{consigna}{red}
+%El WBS debe tener relación directa o indirecta con los requerimientos.  Son todas las actividades que se harán en el proyecto para dar cumplimiento a los requerimientos. Se recomienda mostrar el WBS mediante una lista indexada:
+%
+%\begin{enumerate}
+%\item Grupo de tareas 1
+%	\begin{enumerate}
+%	\item Tarea 1 (tantas hs)
+%	\item Tarea 2 (tantas hs)
+%	\item Tarea 3 (tantas hs)
+%	\end{enumerate}
+%\item Grupo de tareas 2
+%	\begin{enumerate}
+%	\item Tarea 1 (tantas hs)
+%	\item Tarea 2 (tantas hs)
+%	\item Tarea 3 (tantas hs)
+%	\end{enumerate}
+%\item Grupo de tareas 3
+%	\begin{enumerate}
+%	\item Tarea 1 (tantas hs)
+%	\item Tarea 2 (tantas hs)
+%	\item Tarea 3 (tantas hs)
+%	\item Tarea 4 (tantas hs)
+%	\item Tarea 5 (tantas hs)
+%	\end{enumerate}
+%\end{enumerate}
+%
+%Cantidad total de horas: (tantas hs)
+%
+%Se recomienda que no haya ninguna tarea que lleve más de 40 hs. 
+%
+%\end{consigna}
 
 \section{10. Diagrama de Activity On Node}
 \label{sec:AoN}
 
-\begin{consigna}{red}
-Armar el AoN a partir del WBS definido en la etapa anterior. 
-
-%La figura \ref{fig:AoN} fue elaborada con el paquete latex tikz y pueden consultar la siguiente referencia \textit{online}:
-
-%\url{https://www.overleaf.com/learn/latex/LaTeX_Graphics_using_TikZ:_A_Tutorial_for_Beginners_(Part_3)\%E2\%80\%94Creating_Flowcharts}
-
-\end{consigna}
-
-\begin{figure}[htpb]
-\centering 
-\includegraphics[width=.8\textwidth]{./Figuras/AoN.png}
-\caption{Diagrama en \textit{Activity on Node}}
-\label{fig:AoN}
-\end{figure}
-
-Indicar claramente en qué unidades están expresados los tiempos.
-De ser necesario indicar los caminos semicríticos y analizar sus tiempos mediante un cuadro.
-Es recomendable usar colores y un cuadro indicativo describiendo qué representa cada color, como se muestra en el siguiente ejemplo:
-
+%\begin{consigna}{red}
+%Armar el AoN a partir del WBS definido en la etapa anterior. 
+%
+%%La figura \ref{fig:AoN} fue elaborada con el paquete latex tikz y pueden consultar la siguiente referencia \textit{online}:
+%
+%%\url{https://www.overleaf.com/learn/latex/LaTeX_Graphics_using_TikZ:_A_Tutorial_for_Beginners_(Part_3)\%E2\%80\%94Creating_Flowcharts}
+%
+%\end{consigna}
+%
+%\begin{figure}[htpb]
+%\centering 
+%\includegraphics[width=.8\textwidth]{./Figuras/AoN.png}
+%\caption{Diagrama en \textit{Activity on Node}}
+%\label{fig:AoN}
+%\end{figure}
+%
+%Indicar claramente en qué unidades están expresados los tiempos.
+%De ser necesario indicar los caminos semicríticos y analizar sus tiempos mediante un cuadro.
+%Es recomendable usar colores y un cuadro indicativo describiendo qué representa cada color, como se muestra en el siguiente ejemplo:
+%
 
 
 \section{11. Diagrama de Gantt}
 \label{sec:gantt}
 
-\begin{consigna}{red}
-
-Existen muchos programas y recursos \textit{online} para hacer diagramas de gantt, entre los cuales destacamos:
-
-\begin{itemize}
-\item Planner
-\item GanttProject
-\item Trello + \textit{plugins}. En el siguiente link hay un tutorial oficial: \\ \url{https://blog.trello.com/es/diagrama-de-gantt-de-un-proyecto}
-\item Creately, herramienta online colaborativa. \\\url{https://creately.com/diagram/example/ieb3p3ml/LaTeX}
-\item Se puede hacer en latex con el paquete \textit{pgfgantt}\\ \url{http://ctan.dcc.uchile.cl/graphics/pgf/contrib/pgfgantt/pgfgantt.pdf}
-\end{itemize}
-
-Pegar acá una captura de pantalla del diagrama de Gantt, cuidando que la letra sea suficientemente grande como para ser legible. 
-Si el diagrama queda demasiado ancho, se puede pegar primero la ``tabla'' del Gantt y luego pegar la parte del diagrama de barras del diagrama de Gantt.
-
-Configurar el software para que en la parte de la tabla muestre los códigos del EDT (WBS).\\
-Configurar el software para que al lado de cada barra muestre el nombre de cada tarea.\\
-Revisar que la fecha de finalización coincida con lo indicado en el Acta Constitutiva.
-
-En la figura \ref{fig:gantt}, se muestra un ejemplo de diagrama de gantt realizado con el paquete de \textit{pgfgantt}. En la plantilla pueden ver el código que lo genera y usarlo de base para construir el propio.
-
-\begin{figure}[htbp]
-\begin{center}
-\begin{ganttchart}{1}{12}
-  \gantttitle{2020}{12} \\
-  \gantttitlelist{1,...,12}{1} \\
-  \ganttgroup{Group 1}{1}{7} \\
-  \ganttbar{Task 1}{1}{2} \\
-  \ganttlinkedbar{Task 2}{3}{7} \ganttnewline
-  \ganttmilestone{Milestone o hito}{7} \ganttnewline
-  \ganttbar{Final Task}{8}{12}
-  \ganttlink{elem2}{elem3}
-  \ganttlink{elem3}{elem4}
-\end{ganttchart}
-\end{center}
-\caption{Diagrama de gantt de ejemplo}
-\label{fig:gantt}
-\end{figure}
-
-
-\begin{landscape}
-\begin{figure}[htpb]
-\centering 
-\includegraphics[height=.85\textheight]{./Figuras/Gantt-2.png}
-\caption{Ejemplo de diagrama de Gantt rotado}
-\label{fig:diagGantt}
-\end{figure}
-
-\end{landscape}
-
-\end{consigna}
+%\begin{consigna}{red}
+%
+%Existen muchos programas y recursos \textit{online} para hacer diagramas de gantt, entre los cuales destacamos:
+%
+%\begin{itemize}
+%\item Planner
+%\item GanttProject
+%\item Trello + \textit{plugins}. En el siguiente link hay un tutorial oficial: \\ \url{https://blog.trello.com/es/diagrama-de-gantt-de-un-proyecto}
+%\item Creately, herramienta online colaborativa. \\\url{https://creately.com/diagram/example/ieb3p3ml/LaTeX}
+%\item Se puede hacer en latex con el paquete \textit{pgfgantt}\\ \url{http://ctan.dcc.uchile.cl/graphics/pgf/contrib/pgfgantt/pgfgantt.pdf}
+%\end{itemize}
+%
+%Pegar acá una captura de pantalla del diagrama de Gantt, cuidando que la letra sea suficientemente grande como para ser legible. 
+%Si el diagrama queda demasiado ancho, se puede pegar primero la ``tabla'' del Gantt y luego pegar la parte del diagrama de barras del diagrama de Gantt.
+%
+%Configurar el software para que en la parte de la tabla muestre los códigos del EDT (WBS).\\
+%Configurar el software para que al lado de cada barra muestre el nombre de cada tarea.\\
+%Revisar que la fecha de finalización coincida con lo indicado en el Acta Constitutiva.
+%
+%En la figura \ref{fig:gantt}, se muestra un ejemplo de diagrama de gantt realizado con el paquete de \textit{pgfgantt}. En la plantilla pueden ver el código que lo genera y usarlo de base para construir el propio.
+%
+%\begin{figure}[htbp]
+%\begin{center}
+%\begin{ganttchart}{1}{12}
+%  \gantttitle{2020}{12} \\
+%  \gantttitlelist{1,...,12}{1} \\
+%  \ganttgroup{Group 1}{1}{7} \\
+%  \ganttbar{Task 1}{1}{2} \\
+%  \ganttlinkedbar{Task 2}{3}{7} \ganttnewline
+%  \ganttmilestone{Milestone o hito}{7} \ganttnewline
+%  \ganttbar{Final Task}{8}{12}
+%  \ganttlink{elem2}{elem3}
+%  \ganttlink{elem3}{elem4}
+%\end{ganttchart}
+%\end{center}
+%\caption{Diagrama de gantt de ejemplo}
+%\label{fig:gantt}
+%\end{figure}
+%
+%
+%\begin{landscape}
+%\begin{figure}[htpb]
+%\centering 
+%\includegraphics[height=.85\textheight]{./Figuras/Gantt-2.png}
+%\caption{Ejemplo de diagrama de Gantt rotado}
+%\label{fig:diagGantt}
+%\end{figure}
+%
+%\end{landscape}
+%
+%\end{consigna}
 
 
 \section{12. Presupuesto detallado del proyecto}
 \label{sec:presupuesto}
 
-\begin{consigna}{red}
-Si el proyecto es complejo entonces separarlo en partes:
-\begin{itemize}
-	\item Un total global, indicando el subtotal acumulado por cada una de las áreas.
-	\item El desglose detallado del subtotal de cada una de las áreas.
-\end{itemize}
-
-IMPORTANTE: No olvidarse de considerar los COSTOS INDIRECTOS.
-
-\end{consigna}
-
-\begin{table}[htpb]
-\centering
-\begin{tabularx}{\linewidth}{@{}|X|c|r|r|@{}}
-\hline
-\rowcolor[HTML]{C0C0C0} 
-\multicolumn{4}{|c|}{\cellcolor[HTML]{C0C0C0}COSTOS DIRECTOS} \\ \hline
-\rowcolor[HTML]{C0C0C0} 
-Descripción &
-  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Cantidad} &
-  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor unitario} &
-  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total} \\ \hline
- &
-  \multicolumn{1}{c|}{} &
-  \multicolumn{1}{c|}{} &
-  \multicolumn{1}{c|}{} \\ \hline
- &
-  \multicolumn{1}{c|}{} &
-  \multicolumn{1}{c|}{} &
-  \multicolumn{1}{c|}{} \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
-\multicolumn{3}{|c|}{SUBTOTAL} &
-  \multicolumn{1}{c|}{} \\ \hline
-\rowcolor[HTML]{C0C0C0} 
-\multicolumn{4}{|c|}{\cellcolor[HTML]{C0C0C0}COSTOS INDIRECTOS} \\ \hline
-\rowcolor[HTML]{C0C0C0} 
-Descripción &
-  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Cantidad} &
-  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor unitario} &
-  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total} \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
-\multicolumn{3}{|c|}{SUBTOTAL} &
-  \multicolumn{1}{c|}{} \\ \hline
-\rowcolor[HTML]{C0C0C0}
-\multicolumn{3}{|c|}{TOTAL} &
-   \\ \hline
-\end{tabularx}%
-\end{table}
+%\begin{consigna}{red}
+%Si el proyecto es complejo entonces separarlo en partes:
+%\begin{itemize}
+%	\item Un total global, indicando el subtotal acumulado por cada una de las áreas.
+%	\item El desglose detallado del subtotal de cada una de las áreas.
+%\end{itemize}
+%
+%IMPORTANTE: No olvidarse de considerar los COSTOS INDIRECTOS.
+%
+%\end{consigna}
+%
+%\begin{table}[htpb]
+%\centering
+%\begin{tabularx}{\linewidth}{@{}|X|c|r|r|@{}}
+%\hline
+%\rowcolor[HTML]{C0C0C0} 
+%\multicolumn{4}{|c|}{\cellcolor[HTML]{C0C0C0}COSTOS DIRECTOS} \\ \hline
+%\rowcolor[HTML]{C0C0C0} 
+%Descripción &
+%  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Cantidad} &
+%  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor unitario} &
+%  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total} \\ \hline
+% &
+%  \multicolumn{1}{c|}{} &
+%  \multicolumn{1}{c|}{} &
+%  \multicolumn{1}{c|}{} \\ \hline
+% &
+%  \multicolumn{1}{c|}{} &
+%  \multicolumn{1}{c|}{} &
+%  \multicolumn{1}{c|}{} \\ \hline
+%\multicolumn{1}{|l|}{} &
+%   &
+%   &
+%   \\ \hline
+%\multicolumn{1}{|l|}{} &
+%   &
+%   &
+%   \\ \hline
+%\multicolumn{3}{|c|}{SUBTOTAL} &
+%  \multicolumn{1}{c|}{} \\ \hline
+%\rowcolor[HTML]{C0C0C0} 
+%\multicolumn{4}{|c|}{\cellcolor[HTML]{C0C0C0}COSTOS INDIRECTOS} \\ \hline
+%\rowcolor[HTML]{C0C0C0} 
+%Descripción &
+%  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Cantidad} &
+%  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor unitario} &
+%  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total} \\ \hline
+%\multicolumn{1}{|l|}{} &
+%   &
+%   &
+%   \\ \hline
+%\multicolumn{1}{|l|}{} &
+%   &
+%   &
+%   \\ \hline
+%\multicolumn{1}{|l|}{} &
+%   &
+%   &
+%   \\ \hline
+%\multicolumn{3}{|c|}{SUBTOTAL} &
+%  \multicolumn{1}{c|}{} \\ \hline
+%\rowcolor[HTML]{C0C0C0}
+%\multicolumn{3}{|c|}{TOTAL} &
+%   \\ \hline
+%\end{tabularx}%
+%\end{table}
 
 
 \section{13. Gestión de riesgos}
 \label{sec:riesgos}
 
-\begin{consigna}{red}
-a) Identificación de los riesgos (al menos cinco) y estimación de sus consecuencias:
- 
-Riesgo 1: detallar el riesgo (riesgo es algo que si ocurre altera los planes previstos de forma negativa)
-\begin{itemize}
-	\item Severidad (S): mientras más severo, más alto es el número (usar números del 1 al 10).\\
-	Justificar el motivo por el cual se asigna determinado número de severidad (S).
-	\item Probabilidad de ocurrencia (O): mientras más probable, más alto es el número (usar del 1 al 10).\\
-	Justificar el motivo por el cual se asigna determinado número de (O). 
-\end{itemize}   
-
-Riesgo 2:
-\begin{itemize}
-	\item Severidad (S): 
-	\item Ocurrencia (O):
-\end{itemize}
-
-Riesgo 3:
-\begin{itemize}
-	\item Severidad (S): 
-	\item Ocurrencia (O):
-\end{itemize}
-
-
-b) Tabla de gestión de riesgos:      (El RPN se calcula como RPN=SxO)
-
-\begin{table}[htpb]
-\centering
-\begin{tabularx}{\linewidth}{@{}|X|c|c|c|c|c|c|@{}}
-\hline
-\rowcolor[HTML]{C0C0C0} 
-Riesgo & S & O & RPN & S* & O* & RPN* \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
-\end{tabularx}%
-\end{table}
-
-Criterio adoptado: 
-Se tomarán medidas de mitigación en los riesgos cuyos números de RPN sean mayores a...
-
-Nota: los valores marcados con (*) en la tabla corresponden luego de haber aplicado la mitigación.
-
-c) Plan de mitigación de los riesgos que originalmente excedían el RPN máximo establecido:
- 
-Riesgo 1: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
-  Nueva asignación de S y O, con su respectiva justificación:
-  - Severidad (S): mientras más severo, más alto es el número (usar números del 1 al 10).
-          Justificar el motivo por el cual se asigna determinado número de severidad (S).
-  - Probabilidad de ocurrencia (O): mientras más probable, más alto es el número (usar del 1 al 10).
-          Justificar el motivo por el cual se asigna determinado número de (O).
-
-Riesgo 2: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
- 
-Riesgo 3: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
-
-\end{consigna}
+%\begin{consigna}{red}
+%a) Identificación de los riesgos (al menos cinco) y estimación de sus consecuencias:
+% 
+%Riesgo 1: detallar el riesgo (riesgo es algo que si ocurre altera los planes previstos de forma negativa)
+%\begin{itemize}
+%	\item Severidad (S): mientras más severo, más alto es el número (usar números del 1 al 10).\\
+%	Justificar el motivo por el cual se asigna determinado número de severidad (S).
+%	\item Probabilidad de ocurrencia (O): mientras más probable, más alto es el número (usar del 1 al 10).\\
+%	Justificar el motivo por el cual se asigna determinado número de (O). 
+%\end{itemize}   
+%
+%Riesgo 2:
+%\begin{itemize}
+%	\item Severidad (S): 
+%	\item Ocurrencia (O):
+%\end{itemize}
+%
+%Riesgo 3:
+%\begin{itemize}
+%	\item Severidad (S): 
+%	\item Ocurrencia (O):
+%\end{itemize}
+%
+%
+%b) Tabla de gestión de riesgos:      (El RPN se calcula como RPN=SxO)
+%
+%\begin{table}[htpb]
+%\centering
+%\begin{tabularx}{\linewidth}{@{}|X|c|c|c|c|c|c|@{}}
+%\hline
+%\rowcolor[HTML]{C0C0C0} 
+%Riesgo & S & O & RPN & S* & O* & RPN* \\ \hline
+%       &   &   &     &    &    &      \\ \hline
+%       &   &   &     &    &    &      \\ \hline
+%       &   &   &     &    &    &      \\ \hline
+%       &   &   &     &    &    &      \\ \hline
+%       &   &   &     &    &    &      \\ \hline
+%\end{tabularx}%
+%\end{table}
+%
+%Criterio adoptado: 
+%Se tomarán medidas de mitigación en los riesgos cuyos números de RPN sean mayores a...
+%
+%Nota: los valores marcados con (*) en la tabla corresponden luego de haber aplicado la mitigación.
+%
+%c) Plan de mitigación de los riesgos que originalmente excedían el RPN máximo establecido:
+% 
+%Riesgo 1: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
+%  Nueva asignación de S y O, con su respectiva justificación:
+%  - Severidad (S): mientras más severo, más alto es el número (usar números del 1 al 10).
+%          Justificar el motivo por el cual se asigna determinado número de severidad (S).
+%  - Probabilidad de ocurrencia (O): mientras más probable, más alto es el número (usar del 1 al 10).
+%          Justificar el motivo por el cual se asigna determinado número de (O).
+%
+%Riesgo 2: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
+% 
+%Riesgo 3: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
+%
+%\end{consigna}
 
 
 \section{14. Gestión de la calidad}
 \label{sec:calidad}
 
-\begin{consigna}{red}
-Para cada uno de los requerimientos del proyecto indique:
-\begin{itemize} 
-\item Req \#1: copiar acá el requerimiento.
-
-\begin{itemize}
-	\item Verificación para confirmar si se cumplió con lo requerido antes de mostrar el sistema al cliente. Detallar 
-	\item Validación con el cliente para confirmar que está de acuerdo en que se cumplió con lo requerido. Detallar  
-\end{itemize}
-
-\end{itemize}
-
-Tener en cuenta que en este contexto se pueden mencionar simulaciones, cálculos, revisión de hojas de datos, consulta con expertos, mediciones, etc.  Las acciones de verificación suelen considerar al entregable como ``caja blanca'', es decir se conoce en profundidad su funcionamiento interno.  En cambio, las acciones de validación suelen considerar al entregable como ``caja negra'', es decir, que no se conocen los detalles de su funcionamiento interno.
-
-\end{consigna}
+%\begin{consigna}{red}
+%Para cada uno de los requerimientos del proyecto indique:
+%\begin{itemize} 
+%\item Req \#1: copiar acá el requerimiento.
+%
+%\begin{itemize}
+%	\item Verificación para confirmar si se cumplió con lo requerido antes de mostrar el sistema al cliente. Detallar 
+%	\item Validación con el cliente para confirmar que está de acuerdo en que se cumplió con lo requerido. Detallar  
+%\end{itemize}
+%
+%\end{itemize}
+%
+%Tener en cuenta que en este contexto se pueden mencionar simulaciones, cálculos, revisión de hojas de datos, consulta con expertos, mediciones, etc.  Las acciones de verificación suelen considerar al entregable como ``caja blanca'', es decir se conoce en profundidad su funcionamiento interno.  En cambio, las acciones de validación suelen considerar al entregable como ``caja negra'', es decir, que no se conocen los detalles de su funcionamiento interno.
+%
+%\end{consigna}
 
 \section{15. Procesos de cierre}    
 \label{sec:cierre}
 
-\begin{consigna}{red}
-Establecer las pautas de trabajo para realizar una reunión final de evaluación del proyecto, tal que contemple las siguientes actividades:
-
-\begin{itemize}
-	\item Pautas de trabajo que se seguirán para analizar si se respetó el Plan de Proyecto original:
-	 - Indicar quién se ocupará de hacer esto y cuál será el procedimiento a aplicar. 
-	\item Identificación de las técnicas y procedimientos útiles e inútiles que se emplearon, y los problemas que surgieron y cómo se solucionaron:
-	 - Indicar quién se ocupará de hacer esto y cuál será el procedimiento para dejar registro.
-	\item Indicar quién organizará el acto de agradecimiento a todos los interesados, y en especial al equipo de trabajo y colaboradores:
-	  - Indicar esto y quién financiará los gastos correspondientes.
-\end{itemize}
-
-\end{consigna}
+%\begin{consigna}{red}
+%Establecer las pautas de trabajo para realizar una reunión final de evaluación del proyecto, tal que contemple las siguientes actividades:
+%
+%\begin{itemize}
+%	\item Pautas de trabajo que se seguirán para analizar si se respetó el Plan de Proyecto original:
+%	 - Indicar quién se ocupará de hacer esto y cuál será el procedimiento a aplicar. 
+%	\item Identificación de las técnicas y procedimientos útiles e inútiles que se emplearon, y los problemas que surgieron y cómo se solucionaron:
+%	 - Indicar quién se ocupará de hacer esto y cuál será el procedimiento para dejar registro.
+%	\item Indicar quién organizará el acto de agradecimiento a todos los interesados, y en especial al equipo de trabajo y colaboradores:
+%	  - Indicar esto y quién financiará los gastos correspondientes.
+%\end{itemize}
+%
+%\end{consigna}
 
 
 \end{document}
