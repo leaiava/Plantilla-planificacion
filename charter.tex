@@ -38,9 +38,9 @@ codirector, % Uncomment to add a codirector to the title page
 \juradoTres{Nombre y Apellido (3)}
 \pertenenciaJurTres{pertenencia (3)}
  
-\fechaINICIO{30 de abril de 2021}		%Fecha de inicio de la cursada de GdP \fechaInicioName
+\fechaINICIO{24 de junio de 2021}		%Fecha de inicio de la cursada de GdP \fechaInicioName
 \fechaFINALPlan{18 de junio de 2021} 	%Fecha de final de cursada de GdP
-\fechaFINALTrabajo{15 de mayo de 2022}	%Fecha de defensa pública del trabajo final
+\fechaFINALTrabajo{12 de agosto de 2022}	%Fecha de defensa pública del trabajo final
 
 
 \begin{document}
@@ -69,7 +69,7 @@ codirector, % Uncomment to add a codirector to the title page
 \rowcolor[HTML]{C0C0C0} 
 Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios realizados} & Fecha      \\ \hline
 0      & Creación del documento                                 & 01/07/2012 \\ \hline
-1.0      & Se completa hasta la sección 5 inclusive                 & 06/07/2012 \\ \hline
+1.0      & Se completa hasta la sección 5 inclusive                 & 13/07/2012 \\ \hline
 %2      & Se completa hasta el punto 7 inclusive
 %		  Se puede agregar algo más \newline
 %		  En distintas líneas \newline
@@ -92,7 +92,7 @@ Buenos Aires, \fechaInicioName
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con el Ing. \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en el desarrollo y la implementación del firmware del dispositivo perteneciente al proyecto de investigación ''C2-ING-066 Herramientas de uso comunitario para el desarrollo de la industria de Tecnología Neurofisiológica", y tendrá un presupuesto preliminar estimado de 600 hs de trabajo y \$1, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
+Por medio de la presente se acuerda con el Ing. \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en el desarrollo y la implementación del firmware del dispositivo perteneciente al proyecto de investigación ''C2-ING-066 Herramientas de uso comunitario para el desarrollo de la industria de Tecnología Neurofisiológica", y tendrá un presupuesto preliminar estimado de 600 hs de trabajo, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -129,7 +129,7 @@ El dispositivo de adquisición de señales neurofisiológicas a desarrollar, a p
 \label{fig:diagBloquesSistema}
 \end{figure}
 
-El DASN tendrá 8 canales de entrada para adquirir las señales neurofisiológicas del paciente y las transmitirá al equipo de registro de manera inalámbrica a través de una comunicación bluetooth 5 o vía cableada a través de una comunicación RS485. Las señales adquiridas se podrán sincronizar con un estimulador externo, pudiendo funcionar el estimulador como master o slave. La interfaz de usuario solo dará indicaciones de encendido, apagado y estado de funcionamiento ya que las señales adquiridas se visualizaran en el monitor del equipo de registro.
+El DASN tendrá 8 canales de entrada para adquirir las señales neurofisiológicas del paciente y las transmitirá al equipo de registro de manera inalámbrica a través de una comunicación BLE 5.0, o cableada a través de una comunicación RS485. Las señales adquiridas se podrán sincronizar con un estimulador externo, pudiendo funcionar el estimulador como master o slave. La interfaz de usuario solo dará indicaciones de encendido, apagado y estado de funcionamiento, ya que las señales adquiridas se visualizarán en el monitor del equipo de registro. El DASN se alimentará a baterías.
 
 %\begin{consigna}{red} % El bloque "consigna" se usa para poner texto en rojo y dar una pequeña ayuda sobre cómo completar la sección
 %
@@ -242,6 +242,7 @@ El presente proyecto incluye:
 El presente proyecto no incluye:
 \begin{itemize}
 	\item Diseño de hardware.
+	\item Filtrado digital de las señales adquiridas
 \end{itemize}
 
 %\begin{consigna}{red}
@@ -259,10 +260,13 @@ El presente proyecto no incluye:
 \section{5. Supuestos del proyecto}
 \label{sec:supuestos}
 
-Para el desarrollo del presente proyecto se supone que el cliente proveerá el hardware.
-%\begin{itemize}
-%	\item El cliente proveerá del hardware necesario para el desarrollo del firmware
-%\end{itemize}
+Para el desarrollo del presente proyecto se supone que:
+\begin{itemize}
+	\item El cliente proveerá del hardware necesario para el desarrollo del firmware.
+	\item El protocolo de comunicación entre el DASN y el equipo de registro es de libre diseño.
+	\item El DASN y el equipo de registro estarán siempre cerca por lo que no hay requisitos de alcance en la comunicación inalámbrica.
+	\item El hardware no cambiará durante el desarrollo del proyecto
+\end{itemize}
 
 %\begin{consigna}{red}
 %``Para el desarrollo del presente proyecto se supone que: ...''
@@ -277,6 +281,50 @@ Para el desarrollo del presente proyecto se supone que el cliente proveerá el h
 
 \section{6. Requerimientos}
 \label{sec:requerimientos}
+
+\begin{enumerate}
+	\item \textbf{Requerimientos de interfaces externas}
+		\begin{enumerate}
+			\item El software deberá comunicarse con el equipo de registro utilizando una interfaz BLE 5.0.
+			\item El software deberá comunicarse con el equipo de registro utilizando una interfaz RS485. 
+			\item El software deberá indicar mediante el led1 que está transmitiendo las señales adquiridas de forma inalámbrica o cableada. 
+			\item El software deberá indicar mediante el led2 si está encendido o apagado. También deberá indicar con el mismo led2 si entra en el modo pairing BLE.
+			\item Señal de TriggerOut. El software deberá manejar una salida para sincronizar la adquisición con un estimulador externo (dispositivo externo como slave). La salida deberá poder configurarse entre normal bajo y normal alto. El pulso deberá poder configurarse entre 5 anchos de pulso diferentes (0,1 ms; 0,5 ms; 1 ms; 5 ms; 10 ms). 
+			\item Señal de TriggerIn. El software deberá manejar una entrada para sincronizar la adquisición con un estimulador externo (dispositivo externo como master). La detección deberá ser por flanco y se deberá poder configurar si el flanco es de subida o de bajada.
+			\item El software deberá manejar el pulsador que servirá para encender el dispositivo y para realizar el pairing BLE.
+			\item El software deberá generar la señal de impedancia para los canales de potenciales evocados.
+			\item El software deberá medir el estado de las baterías con el ADC interno del MCU.
+		\end{enumerate}
+	\item \textbf{Requerimientos funcionales}
+		\begin{enumerate}
+			\item El software deberá configurar la frecuencia de muestreo de la señal adquirida entre 7 diferentes valores ( el ADC de ''EEG-FrontEnd\_v1.x.0.SchDoc” ofrece 65 Hz, 131 Hz, 262 Hz, 524 Hz, 1048 Hz, 2096 Hz y 4193 Hz).
+			\item El software deberá poder adquirir de 1 a 8 canales simultáneos.
+			\item Mediante comandos recibidos por BLE 5.0 o RS485 el software deberá poder iniciar y parar la adquisición.
+			\item El software deberá configurar la ganancia de amplificación de cada canal entre 7 diferentes valores ( el ADC de ''EEG-FrontEnd\_v1.x.0.SchDoc” ofrece 1, 2, 4, 6, 8, 12 y 24).
+			\item El software deberá configurar el ADC para usar una tipología de entrada diferencial o referencial.
+			\item El software deberá medir la impedancia de los electrodos con una señal de medición de impedancia cuya frecuencia deberá ser 7,8 Hz o 31,2 Hz.
+			\item El software deberá seleccionar a qué electrodos le inyecta la señal de medición de impedancia.
+			\item El software deberá seleccionar para cada electrodo si usa la señal de impedancia generada por el ADC o la generada por el MCU.
+			\item El software deberá enviar la siguiente información de autodiagnóstico: temperatura del ADC, valor de las tensiones del ADC y frecuencia del clock del ADC.
+			\item El software deberá prender y apagar el equipo con una pulsación corta del botón, pulsación menor a 1 segundo.
+			\item El software deberá entrar en el modo de apareo de la comunicación BLE con una pulsación larga del botón, pulsación mayor a 4 segundos.
+			\item Luego de 1 minuto de inactividad, el software deberá entrar a un modo de bajo consumo de energía. Para esto deberá apagar el ADC, el transceiver RS485 y la alimentación de todos los periféricos externos al MCU.
+			\item El software deberá manejar una comunicación RS485 hasta 3 MBd.
+			\item El software deberá poder recibir comandos mientras está transmitiendo las señales adquiridas.
+
+		\end{enumerate}
+	\item \textbf{Requerimientos de documentación}
+		\begin{enumerate}
+			\item La documentación debe cumplir los requisitos de la norma ISO 62304.
+			\item Toda la documentación del proyecto se almacenará bajo un sistema de control de versiones GIT.
+			\item Toda la documentación del código se realizará utilizando la herramienta Doxygen.
+		\end{enumerate}
+%	\item \textbf{Requerimientos futuros}
+%		\begin{enumerate}	
+%			\item En el futuro se prevé diseñar un hardware con hasta 32 canales de adquisición.
+			
+%		\end{enumerate}
+\end{enumerate}
 
 %\begin{consigna}{red}
 %Los requerimientos deben numerarse y de ser posible estar agruparlos por afinidad, por ejemplo:
@@ -317,6 +365,61 @@ Para el desarrollo del presente proyecto se supone que el cliente proveerá el h
 \section{7. Historias de usuarios (\textit{Product backlog})}
 \label{sec:backlog}
 
+Criterio para ponderar los \textit{story point}: 
+
+Se deben evaluar los siguientes aspectos de cada historia de usuario con una escala de 1 a 3, donde 1 es la calificación más baja y 3 la más alta:
+\begin{itemize}
+	\item \textbf{Dificultad} (cantidad de trabajo a realizar).
+	\item \textbf{Complejidad} (nivel de sofisticación del trabajo).
+	\item \textbf{Incertidumbre} (nivel de riesgo que involucra realizar la tarea).
+\end{itemize}	
+
+Finalmente se determina el \textit{story point} realizando la siguiente operación:
+
+	\textbf{\textit{Story point}} = Dificultad x Complejidad x Incertidumbre
+
+	\begin{enumerate}
+		\item Como usuario quiero seleccionar la frecuencia de muestreo y ganancia de cada canal para poder hacer distintos tipos de estudios neurológicos.
+		\begin{itemize}
+			\item \textbf{Dificultad:} 1
+			\item \textbf{Complejidad:} 2
+			\item \textbf{Incertidumbre:} 1
+		\end{itemize}	
+	\textbf{\textit{Story point}} = 2
+
+		\item Como usuario quiero que el equipo sea inalámbrico para que el paciente se mueva libremente
+		\begin{itemize}
+			\item \textbf{Dificultad:} 2
+			\item \textbf{Complejidad:} 3
+			\item \textbf{Incertidumbre:} 3
+		\end{itemize}	
+	\textbf{\textit{Story point}} = 18
+
+		\item Como usuario quiero medir la impedancia de los electrodos para poder comprobar su correcta colocación.
+		\begin{itemize}
+			\item \textbf{Dificultad:} 2
+			\item \textbf{Complejidad:} 2
+			\item \textbf{Incertidumbre:} 1
+		\end{itemize}	
+	\textbf{\textit{Story point}} = 4
+
+		\item Como usuario quiero sincronizar el equipo con un estimulador externo para hacer estudios de potenciales evocados.
+		\begin{itemize}
+			\item \textbf{Dificultad:} 2
+			\item \textbf{Complejidad:} 2
+			\item \textbf{Incertidumbre:} 2
+		\end{itemize}	
+	\textbf{\textit{Story point}} = 8
+
+		\item Como usuario quiero ver el estado de las baterías para saber la autonomía del equipo.
+		\begin{itemize}
+			\item \textbf{Dificultad:} 2
+			\item \textbf{Complejidad:} 2
+			\item \textbf{Incertidumbre:} 2
+		\end{itemize}	
+	\textbf{\textit{Story point}} = 8
+	\end{enumerate}
+
 %\begin{consigna}{red}
 %Descripción: En esta sección se deben incluir las historias de usuarios y su ponderación (\textit{history points}). Recordar que las historias de usuarios son descripciones cortas y simples de una característica contada desde la perspectiva de la persona que desea la nueva capacidad, generalmente un usuario o cliente del sistema. La ponderación es un número entero que representa el tamaño de la historia comparada con otras historias de similar tipo.
 %
@@ -328,6 +431,16 @@ Para el desarrollo del presente proyecto se supone que el cliente proveerá el h
 \section{8. Entregables principales del proyecto}
 \label{sec:entregables}
 
+Los entregables del proyecto son:
+
+\begin{itemize}
+	\item Código fuente del firmware.
+	\item Código fuente del Software de prueba.
+	\item Documentación acorde a ISO 62304.
+	\item Informe final
+\end{itemize}
+
+%
 %\begin{consigna}{red}
 %
 %Los entregables del proyecto son (ejemplo):
@@ -345,6 +458,51 @@ Para el desarrollo del presente proyecto se supone que el cliente proveerá el h
 
 \section{9. Desglose del trabajo en tareas}
 \label{sec:wbs}
+
+En cada grupo de tareas se indica el subtotal de horas correspondiente al mismo.:
+
+\begin{enumerate}
+\item \textbf{Planificación y documentación (100 hs)}
+	\begin{enumerate}
+	\item Planificación del proyecto (20 hs)
+	\item Especificación de requisitos de software (20 hs)
+	\item Investigación Norma ISO 62304 (30 hs)
+	\item Análisis de riesgo (30 hs)
+	\end{enumerate}
+\item \textbf{Diseño e implementación del firmware (270 hs)}
+	\begin{enumerate}
+	\item Preparación del entorno de desarrollo (20 hs)
+	\item Diseño de la arquitectura del firmware  (30 hs)
+	\item Investigación sobre tecnología BLE (20 hs)	
+	\item Diseño del protocolo de comunicación (30 hs)
+	\item Desarrollo del módulo comunicación BLE (40 hs)
+	\item Desarrollo del módulo comunicación RS485 (20 hs)
+	\item Desarrollo del módulo ADC (30 hs)
+	\item Desarrollo del módulo manejo estimulador externo (20 hs)
+	\item Desarrollo del módulo interfaz de usuario (10 hs)
+	\item Pruebas de integración (30 hs)
+	\item Pruebas de verificación (20 hs)
+	\end{enumerate}
+\item \textbf{Diseño e implementación software de prueba (150 hs)}
+	\begin{enumerate}
+	\item Preparación del entorno de desarrollo (20 hs)
+	\item Diseño de la arquitectura (20 hs)
+	\item Desarrollo de drivers (40 hs)
+	\item Desarrollo de Interfaz gráfica (30 hs)
+	\item Pruebas de integración (20 hs)
+	\item Pruebas de verificación (20 hs)
+	\end{enumerate}
+\item \textbf{Cierre del proyecto (110 hs)}
+	\begin{enumerate}
+	\item Pruebas de validación (40 hs)
+	\item Informes de avance del proyecto (10 hs)
+	\item Presentaciones al cliente (10 hs)
+	\item Memoria descriptiva final del proyecto  (40 hs)
+	\item Presentación final del proyecto (10 hs)
+	\end{enumerate}
+\end{enumerate}
+
+\textbf{Cantidad total de horas: (630 hs)}
 
 %\begin{consigna}{red}
 %El WBS debe tener relación directa o indirecta con los requerimientos.  Son todas las actividades que se harán en el proyecto para dar cumplimiento a los requerimientos. Se recomienda mostrar el WBS mediante una lista indexada:
