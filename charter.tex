@@ -68,10 +68,12 @@ codirector, % Uncomment to add a codirector to the title page
 \hline
 \rowcolor[HTML]{C0C0C0} 
 Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios realizados} & Fecha      \\ \hline
-0      & Creación del documento                              & 01/07/2012 \\ \hline
-1.0      & Se completa hasta la sección 5 inclusive          & 06/07/2012 \\ \hline
+0      & Creación del documento                              & 01/07/2021 \\ \hline
+1.0      & Se completa hasta la sección 5 inclusive          & 06/07/2021 \\ \hline
 2.0      & Se agregan supuestos en la sección 5 \newline
-		   Se completa hasta la sección 9 inclusive				 & 13/07/2012 \\ \hline %3      & Se completa hasta el punto 11 inclusive                & dd/mm/aaaa \\ \hline
+		   Se completa hasta la sección 9 inclusive				 & 13/07/2021 \\ \hline
+3.0      & Se agregan requerimientos de documentación \newline
+		   Se completa hasta el punto 12 inclusive                & 26/07/2021 \\ \hline
 %4      & Se completa el plan	                                 & dd/mm/aaaa \\ \hline
 \end{tabularx}
 \end{table}
@@ -89,7 +91,7 @@ Buenos Aires, \fechaInicioName
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con el Ing. \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en el desarrollo y la implementación del firmware del dispositivo perteneciente al proyecto de investigación ''C2-ING-066 Herramientas de uso comunitario para el desarrollo de la industria de Tecnología Neurofisiológica", y tendrá un presupuesto preliminar estimado de 600 hs de trabajo, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
+Por medio de la presente se acuerda con el Ing. \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en el desarrollo y la implementación del firmware del dispositivo perteneciente al proyecto de investigación ''C2-ING-066 Herramientas de uso comunitario para el desarrollo de la industria de Tecnología Neurofisiológica", y tendrá un presupuesto preliminar estimado de 630 hs de trabajo, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -128,54 +130,8 @@ El dispositivo de adquisición de señales neurofisiológicas a desarrollar, a p
 
 El DASN tendrá 8 canales de entrada para adquirir las señales neurofisiológicas del paciente y las transmitirá al equipo de registro de manera inalámbrica a través de una comunicación BLE 5.0, o cableada a través de una comunicación RS485. Las señales adquiridas se podrán sincronizar con un estimulador externo, pudiendo funcionar el estimulador como master o slave. La interfaz de usuario solo dará indicaciones de encendido, apagado y estado de funcionamiento, ya que las señales adquiridas se visualizarán en el monitor del equipo de registro. El DASN se alimentará a baterías.
 
-%\begin{consigna}{red} % El bloque "consigna" se usa para poner texto en rojo y dar una pequeña ayuda sobre cómo completar la sección
-%
-%El objetivo es que el lector en una o dos páginas entienda de qué se trata el proyecto y cuáles son sus desafíos, su motivación y su importancia.
-%
-%Se debe destacar claramente cuál es el valor que agrega el proyecto a realizar. ``El presente proyecto se destaca especialmente por incorporar tal cosa... Esto lo diferencia de otros sistemas similares en que ...''
-%
-%Puede ser útil incluir en esta sección la respuesta a alguna de estas preguntas:
-%
-%\begin{itemize}
-%	\item ¿Cómo se vincula este proyecto con la misión de la organización?
-%	\item ¿Cómo se inserta este proyecto en el modelo de negocio de la organización?
-%	\item ¿Ayuda a la explicación si se incluye un lienzo Canvas del Modelo de Negocio?
-%	\item ¿En qué estado del ciclo de vida está el producto que se desea reemplazar o mejorar?
-%	\item ¿Cuáles son las necesidades que debe satisfacer?
-%	\item ¿Por dónde pasa la innovación?
-%\end{itemize}
-%
-%La descripción técnica-conceptual \textbf{debe incluir al menos un diagrama en bloques del sistema} y una frase como la siguiente: ``En la Figura \ref{fig:diagBloques} se presenta el diagrama en bloques del sistema. Se observa que...''. Luego recién más abajo de haber puesto esta frase, se pone la figura. La regla es que las figuras nunca pueden ir antes de ser mencionadas en el texto, porque sino el lector no entiende por qué de pronto aparece una figura.
-%
-%%\vspace{25px}
-%
-%\begin{figure}[htpb]
-%\centering 
-%\includegraphics[width=.5\textwidth]{./Figuras/diagBloques.png}
-%\caption{Diagrama en bloques del sistema}
-%\label{fig:diagBloques}
-%\end{figure}
-%
-%\vspace{25px}
-%
-%El tamaño de la tipografía en TODAS las figuras debe ser adecuado para que NO pase lo que ocurre acá, donde el lector debe esforzarse para poder leer el texto. Los colores usados en el diagrama deben ser adecuados, tal que ayuden a comprender mejor el diagrama, preferentemente en la gama de colores pastel.
-%\end{consigna}
 \section{2. Identificación y análisis de los interesados}
 \label{sec:interesados}
-
-%\begin{consigna}{red} 
-%Nota: (borrar esto y todas las consignas en color rojo antes de entregar este documento).
-% 
-%Es inusual que una misma persona esté en más de un rol, incluso en proyectos chicos.
-% 
-%Si se considera que una persona cumple dos o más roles, entonces sólo dejarla en el rol más importante. Por ejemplo:
-%
-%\begin{itemize}
-%\item Si una persona es Cliente pero también colabora u orienta, dejarla solo como Cliente.
-%\item Si una persona es el Responsable, no debe ser colocado también como Miembro del equipo.
-%\end{itemize}
-%
-%Pero en cambio sí es usual que el Cliente y el Auspiciante sean el mismo, por ejemplo.
 
 \begin{table}[ht]
 %\caption{Identificación de los interesados}
@@ -197,33 +153,11 @@ Orientador    & \cosupname	      & \pertecosupname   & Codirector trabajo final 
 \end{tabularx}
 \end{table}
 
-%El Director suele ser uno de los Orientadores.
-%
-%No dejar celdas vacías; si no hay nada que poner en una celda colocar un signo ``-''.
-%
-%No dejar filas vacías; si no hay nada que poner en una fila entonces eliminarla.
-%
-%Es deseable listar a continuación las principales características de cada interesado.
-% 
-%Por ejemplo:
-%\begin{itemize}
-%	\item Auspiciante: es riguroso y exigente con la rendición de gastos. Tener mucho cuidado con esto.
-%	\item Equipo: Juan Perez, suele pedir licencia porque tiene un familiar con una enfermedad. Planificar considerando esto.
-%	\item Orientador: María Gómez va a poder ayudar mucho con la definición de los requerimientos.
-%\end{itemize}
-%
-%\end{consigna}
 
 \section{3. Propósito del proyecto}
 \label{sec:proposito}
 
 El propósito de este proyecto es poner en práctica todos los conocimientos adquiridos durante la carrera de especialización, colaborar con el proyecto ''C2-ING-066 Herramientas de uso comunitario para el desarrollo de la industria de Tecnología Neurofisiológica", y a su vez, completar los requisitos de aprobación de la CESE.
-
-%\begin{consigna}{red}
-%¿Por qué se hace el proyecto? ¿Qué se quiere lograr? 
-%
-%Se recomienda que sea solo un párrafo que empiece diciendo ``El propósito de este proyecto es...''.
-%\end{consigna}
 
 \section{4. Alcance del proyecto}
 \label{sec:alcance}
@@ -242,17 +176,6 @@ El presente proyecto no incluye:
 	\item Filtrado digital de las señales adquiridas
 \end{itemize}
 
-%\begin{consigna}{red}
-%¿Qué se incluye y que no se incluye en este proyecto?
-%
-%Se refiere al trabajo a hacer para entregar el producto o resultado especificado. 
-%
-%Explicitar todo lo quede comprendido dentro del alcance del proyecto.
-%
-%Explicitar además todo lo que no quede incluido (``El presente proyecto no incluye...'')
-%
-%\end{consigna}
-
 
 \section{5. Supuestos del proyecto}
 \label{sec:supuestos}
@@ -262,19 +185,8 @@ Para el desarrollo del presente proyecto se supone que:
 	\item El cliente proveerá del hardware necesario para el desarrollo del firmware.
 	\item El protocolo de comunicación entre el DASN y el equipo de registro es de libre diseño.
 	\item El DASN y el equipo de registro estarán siempre cerca por lo que no hay requisitos de alcance en la comunicación inalámbrica.
-	\item El hardware no cambiará durante el desarrollo del proyecto
+	\item El hardware no cambiará durante el desarrollo del proyecto.
 \end{itemize}
-
-%\begin{consigna}{red}
-%``Para el desarrollo del presente proyecto se supone que: ...''
-%
-%\begin{itemize}
-%	\item Supuesto 1
-%	\item Supuesto 2...
-%\end{itemize}
-%
-%Por ejemplo, se podrían incluir supuestos respecto a disponibilidad de tiempo y recursos humanos y materiales, sobre la factibilidad técnica de distintos aspectos del proyecto, sobre otras cuestiones que sean necesarias para el éxito del proyecto como condiciones macroeconómicas o reglamentarias.
-%\end{consigna}
 
 \section{6. Requerimientos}
 \label{sec:requerimientos}
@@ -286,8 +198,8 @@ Para el desarrollo del presente proyecto se supone que:
 			\item El software deberá comunicarse con el equipo de registro utilizando una interfaz RS485. 
 			\item El software deberá indicar mediante el led1 que está transmitiendo las señales adquiridas de forma inalámbrica o cableada. 
 			\item El software deberá indicar mediante el led2 si está encendido o apagado. También deberá indicar con el mismo led2 si entra en el modo pairing BLE.
-			\item Señal de TriggerOut. El software deberá manejar una salida para sincronizar la adquisición con un estimulador externo (dispositivo externo como slave). La salida deberá poder configurarse entre normal bajo y normal alto. El pulso deberá poder configurarse entre 5 anchos de pulso diferentes (0,1 ms; 0,5 ms; 1 ms; 5 ms; 10 ms). 
-			\item Señal de TriggerIn. El software deberá manejar una entrada para sincronizar la adquisición con un estimulador externo (dispositivo externo como master). La detección deberá ser por flanco y se deberá poder configurar si el flanco es de subida o de bajada.
+			\item El software deberá manejar una salida para sincronizar la adquisición con un estimulador externo (dispositivo externo como slave). La salida deberá poder configurarse entre normal bajo y normal alto. El pulso deberá poder configurarse entre 5 anchos de pulso diferentes (0,1 ms; 0,5 ms; 1 ms; 5 ms; 10 ms). 
+			\item El software deberá manejar una entrada para sincronizar la adquisición con un estimulador externo (dispositivo externo como master). La detección deberá ser por flanco y se deberá poder configurar si el flanco es de subida o de bajada.
 			\item El software deberá manejar el pulsador que servirá para encender el dispositivo y para realizar el pairing BLE.
 			\item El software deberá generar la señal de impedancia para los canales de potenciales evocados.
 			\item El software deberá medir el estado de las baterías con el ADC interno del MCU.
@@ -299,7 +211,7 @@ Para el desarrollo del presente proyecto se supone que:
 			\item Mediante comandos recibidos por BLE 5.0 o RS485 el software deberá poder iniciar y parar la adquisición.
 			\item El software deberá configurar la ganancia de amplificación de cada canal entre 7 diferentes valores ( el ADC de ''EEG-FrontEnd\_v1.x.0.SchDoc” ofrece 1, 2, 4, 6, 8, 12 y 24).
 			\item El software deberá configurar el ADC para usar una tipología de entrada diferencial o referencial.
-			\item El software deberá medir la impedancia de los electrodos con una señal de medición de impedancia cuya frecuencia deberá ser 7,8 Hz o 31,2 Hz.
+			\item El software deberá medir la impedancia de los electrodos con una señal de medición de impedancia cuya frecuencia deberá ser de 7,8 Hz o 31,2 Hz.
 			\item El software deberá seleccionar a qué electrodos le inyecta la señal de medición de impedancia.
 			\item El software deberá seleccionar para cada electrodo si usa la señal de impedancia generada por el ADC o la generada por el MCU.
 			\item El software deberá enviar la siguiente información de autodiagnóstico: temperatura del ADC, valor de las tensiones del ADC y frecuencia del clock del ADC.
@@ -315,6 +227,8 @@ Para el desarrollo del presente proyecto se supone que:
 			\item La documentación debe cumplir los requisitos de la norma ISO 62304.
 			\item Toda la documentación del proyecto se almacenará bajo un sistema de control de versiones GIT.
 			\item Toda la documentación del código se realizará utilizando la herramienta Doxygen.
+			\item Se deberá realizar un informe de avance del proyecto en el séptimo mes de trabajo
+			\item Se deberá realizar la memoria técnica del trabajo final con la plantilla elaborada por la cátedra de gestión de proyecto.
 		\end{enumerate}
 %	\item \textbf{Requerimientos futuros}
 %		\begin{enumerate}	
@@ -323,46 +237,10 @@ Para el desarrollo del presente proyecto se supone que:
 %		\end{enumerate}
 \end{enumerate}
 
-%\begin{consigna}{red}
-%Los requerimientos deben numerarse y de ser posible estar agruparlos por afinidad, por ejemplo:
-%
-%\begin{enumerate}
-%	\item Requerimientos funcionales
-%		\begin{enumerate}
-%			\item El sistema debe...
-%			\item Tal componente debe...
-%			\item El usuario debe poder...
-%		\end{enumerate}
-%	\item Requerimientos de documentación
-%		\begin{enumerate}
-%			\item Requerimiento 1
-%			\item Requerimiento 2 (prioridad menor)
-%		\end{enumerate}
-%	\item Requerimiento de testing...
-%	\item Requerimientos de la interfaz...
-%	\item Requerimientos interoperabilidad...
-%	\item etc...
-%\end{enumerate}
-%
-%Leyendo los requerimientos se debe poder interpretar cómo será el proyecto y su funcionalidad.
-%
-%Indicar claramente cuál es la prioridad entre los distintos requerimientos y si hay requerimientos opcionales. 
-%
-%No olvidarse de que los requerimientos incluyen a las regulaciones y normas vigentes!!!
-%
-%Y al escribirlos seguir las siguientes reglas:
-%\begin{itemize}
-%	\item Ser breve y conciso (nadie lee cosas largas). 
-%	\item Ser específico: no dejar lugar a confusiones.
-%	\item Expresar los requerimientos en términos que sean cuantificables y medibles.
-%\end{itemize}
-%
-%\end{consigna}
-
 \section{7. Historias de usuarios (\textit{Product backlog})}
 \label{sec:backlog}
 
-Criterio para ponderar los \textit{story point}: 
+Criterio para ponderar los \textit{story points}: 
 
 Se deben evaluar los siguientes aspectos de cada historia de usuario con una escala de 1 a 3, donde 1 es la calificación más baja y 3 la más alta:
 \begin{itemize}
@@ -373,48 +251,49 @@ Se deben evaluar los siguientes aspectos de cada historia de usuario con una esc
 
 Finalmente se determina el \textit{story point} realizando la siguiente operación:
 
-	\textbf{\textit{Story point}} = Dificultad x Complejidad x Incertidumbre
+\textbf{\textit{Story points}} = Dificultad x Complejidad x Incertidumbre
+
 
 	\begin{enumerate}
-		\item Como usuario quiero seleccionar la frecuencia de muestreo y ganancia de cada canal para poder hacer distintos tipos de estudios neurológicos.
+		\item ''Como usuario quiero seleccionar la frecuencia de muestreo y ganancia de cada canal para poder hacer distintos tipos de estudios neurológicos."
 		\begin{itemize}
 			\item \textbf{Dificultad:} 1
 			\item \textbf{Complejidad:} 2
 			\item \textbf{Incertidumbre:} 1
 		\end{itemize}	
-	\textbf{\textit{Story point}} = 2
+	\textbf{\textit{Story points}} = 2
 
-		\item Como usuario quiero que el equipo sea inalámbrico para que el paciente se mueva libremente
+		\item ''Como usuario quiero que el equipo sea inalámbrico para que el paciente se mueva libremente"
 		\begin{itemize}
 			\item \textbf{Dificultad:} 2
 			\item \textbf{Complejidad:} 3
 			\item \textbf{Incertidumbre:} 3
 		\end{itemize}	
-	\textbf{\textit{Story point}} = 18
+	\textbf{\textit{Story points}} = 18
 
-		\item Como usuario quiero medir la impedancia de los electrodos para poder comprobar su correcta colocación.
+		\item ''Como usuario quiero medir la impedancia de los electrodos para poder comprobar su correcta colocación."
 		\begin{itemize}
 			\item \textbf{Dificultad:} 2
 			\item \textbf{Complejidad:} 2
 			\item \textbf{Incertidumbre:} 1
 		\end{itemize}	
-	\textbf{\textit{Story point}} = 4
+	\textbf{\textit{Story points}} = 4
 
-		\item Como usuario quiero sincronizar el equipo con un estimulador externo para hacer estudios de potenciales evocados.
+		\item ''Como usuario quiero sincronizar el equipo con un estimulador externo para hacer estudios de potenciales evocados."
 		\begin{itemize}
 			\item \textbf{Dificultad:} 2
 			\item \textbf{Complejidad:} 2
 			\item \textbf{Incertidumbre:} 2
 		\end{itemize}	
-	\textbf{\textit{Story point}} = 8
+	\textbf{\textit{Story points}} = 8
 
-		\item Como usuario quiero ver el estado de las baterías para saber la autonomía del equipo.
+		\item ''Como usuario quiero ver el estado de las baterías para saber la autonomía del equipo."
 		\begin{itemize}
 			\item \textbf{Dificultad:} 2
 			\item \textbf{Complejidad:} 2
 			\item \textbf{Incertidumbre:} 2
 		\end{itemize}	
-	\textbf{\textit{Story point}} = 8
+	\textbf{\textit{Story points}} = 8
 	\end{enumerate}
 
 %\begin{consigna}{red}
@@ -456,7 +335,7 @@ Los entregables del proyecto son:
 \section{9. Desglose del trabajo en tareas}
 \label{sec:wbs}
 
-En cada grupo de tareas se indica el subtotal de horas correspondiente al mismo.:
+En cada grupo de tareas se indica el subtotal de horas correspondiente al mismo.
 
 \begin{enumerate}
 \item \textbf{Planificación y documentación (100 hs)}
@@ -501,188 +380,62 @@ En cada grupo de tareas se indica el subtotal de horas correspondiente al mismo.
 
 \textbf{Cantidad total de horas: (630 hs)}
 
-%\begin{consigna}{red}
-%El WBS debe tener relación directa o indirecta con los requerimientos.  Son todas las actividades que se harán en el proyecto para dar cumplimiento a los requerimientos. Se recomienda mostrar el WBS mediante una lista indexada:
-%
-%\begin{enumerate}
-%\item Grupo de tareas 1
-%	\begin{enumerate}
-%	\item Tarea 1 (tantas hs)
-%	\item Tarea 2 (tantas hs)
-%	\item Tarea 3 (tantas hs)
-%	\end{enumerate}
-%\item Grupo de tareas 2
-%	\begin{enumerate}
-%	\item Tarea 1 (tantas hs)
-%	\item Tarea 2 (tantas hs)
-%	\item Tarea 3 (tantas hs)
-%	\end{enumerate}
-%\item Grupo de tareas 3
-%	\begin{enumerate}
-%	\item Tarea 1 (tantas hs)
-%	\item Tarea 2 (tantas hs)
-%	\item Tarea 3 (tantas hs)
-%	\item Tarea 4 (tantas hs)
-%	\item Tarea 5 (tantas hs)
-%	\end{enumerate}
-%\end{enumerate}
-%
-%Cantidad total de horas: (tantas hs)
-%
-%Se recomienda que no haya ninguna tarea que lleve más de 40 hs. 
-%
-%\end{consigna}
-
+\newpage
 \section{10. Diagrama de Activity On Node}
 \label{sec:AoN}
 
-%\begin{consigna}{red}
-%Armar el AoN a partir del WBS definido en la etapa anterior. 
-%
-%%La figura \ref{fig:AoN} fue elaborada con el paquete latex tikz y pueden consultar la siguiente referencia \textit{online}:
-%
-%%\url{https://www.overleaf.com/learn/latex/LaTeX_Graphics_using_TikZ:_A_Tutorial_for_Beginners_(Part_3)\%E2\%80\%94Creating_Flowcharts}
-%
-%\end{consigna}
-%
-%\begin{figure}[htpb]
-%\centering 
-%\includegraphics[width=.8\textwidth]{./Figuras/AoN.png}
-%\caption{Diagrama en \textit{Activity on Node}}
-%\label{fig:AoN}
-%\end{figure}
-%
-%Indicar claramente en qué unidades están expresados los tiempos.
-%De ser necesario indicar los caminos semicríticos y analizar sus tiempos mediante un cuadro.
-%Es recomendable usar colores y un cuadro indicativo describiendo qué representa cada color, como se muestra en el siguiente ejemplo:
-%
 
+
+\begin{figure}[htpb]
+\centering 
+\includegraphics[width=0.75\textwidth]{./Figuras/DASNActivityonNode.pdf}
+\caption{Diagrama de \textit{Activity on Node}}
+\label{fig:AoN}
+\end{figure}
+
+%\begin{landscape}
 
 \section{11. Diagrama de Gantt}
 \label{sec:gantt}
 
-%\begin{consigna}{red}
-%
-%Existen muchos programas y recursos \textit{online} para hacer diagramas de gantt, entre los cuales destacamos:
-%
-%\begin{itemize}
-%\item Planner
-%\item GanttProject
-%\item Trello + \textit{plugins}. En el siguiente link hay un tutorial oficial: \\ \url{https://blog.trello.com/es/diagrama-de-gantt-de-un-proyecto}
-%\item Creately, herramienta online colaborativa. \\\url{https://creately.com/diagram/example/ieb3p3ml/LaTeX}
-%\item Se puede hacer en latex con el paquete \textit{pgfgantt}\\ \url{http://ctan.dcc.uchile.cl/graphics/pgf/contrib/pgfgantt/pgfgantt.pdf}
-%\end{itemize}
-%
-%Pegar acá una captura de pantalla del diagrama de Gantt, cuidando que la letra sea suficientemente grande como para ser legible. 
-%Si el diagrama queda demasiado ancho, se puede pegar primero la ``tabla'' del Gantt y luego pegar la parte del diagrama de barras del diagrama de Gantt.
-%
-%Configurar el software para que en la parte de la tabla muestre los códigos del EDT (WBS).\\
-%Configurar el software para que al lado de cada barra muestre el nombre de cada tarea.\\
-%Revisar que la fecha de finalización coincida con lo indicado en el Acta Constitutiva.
-%
-%En la figura \ref{fig:gantt}, se muestra un ejemplo de diagrama de gantt realizado con el paquete de \textit{pgfgantt}. En la plantilla pueden ver el código que lo genera y usarlo de base para construir el propio.
-%
-%\begin{figure}[htbp]
-%\begin{center}
-%\begin{ganttchart}{1}{12}
-%  \gantttitle{2020}{12} \\
-%  \gantttitlelist{1,...,12}{1} \\
-%  \ganttgroup{Group 1}{1}{7} \\
-%  \ganttbar{Task 1}{1}{2} \\
-%  \ganttlinkedbar{Task 2}{3}{7} \ganttnewline
-%  \ganttmilestone{Milestone o hito}{7} \ganttnewline
-%  \ganttbar{Final Task}{8}{12}
-%  \ganttlink{elem2}{elem3}
-%  \ganttlink{elem3}{elem4}
-%\end{ganttchart}
-%\end{center}
-%\caption{Diagrama de gantt de ejemplo}
-%\label{fig:gantt}
-%\end{figure}
-%
-%
-%\begin{landscape}
-%\begin{figure}[htpb]
-%\centering 
-%\includegraphics[height=.85\textheight]{./Figuras/Gantt-2.png}
-%\caption{Ejemplo de diagrama de Gantt rotado}
-%\label{fig:diagGantt}
-%\end{figure}
-%
+\begin{figure}[htpb]
+\centering 
+\includegraphics[height=.96\textheight]{./Figuras/DASNGantt.png}
+\caption{Diagrama de Gantt}
+\label{fig:diagGantt}
+\end{figure}
+
 %\end{landscape}
-%
-%\end{consigna}
 
 
 \section{12. Presupuesto detallado del proyecto}
 \label{sec:presupuesto}
 
-%\begin{consigna}{red}
-%Si el proyecto es complejo entonces separarlo en partes:
-%\begin{itemize}
-%	\item Un total global, indicando el subtotal acumulado por cada una de las áreas.
-%	\item El desglose detallado del subtotal de cada una de las áreas.
-%\end{itemize}
-%
-%IMPORTANTE: No olvidarse de considerar los COSTOS INDIRECTOS.
-%
-%\end{consigna}
-%
-%\begin{table}[htpb]
-%\centering
-%\begin{tabularx}{\linewidth}{@{}|X|c|r|r|@{}}
-%\hline
-%\rowcolor[HTML]{C0C0C0} 
-%\multicolumn{4}{|c|}{\cellcolor[HTML]{C0C0C0}COSTOS DIRECTOS} \\ \hline
-%\rowcolor[HTML]{C0C0C0} 
-%Descripción &
-%  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Cantidad} &
-%  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor unitario} &
-%  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total} \\ \hline
-% &
-%  \multicolumn{1}{c|}{} &
-%  \multicolumn{1}{c|}{} &
-%  \multicolumn{1}{c|}{} \\ \hline
-% &
-%  \multicolumn{1}{c|}{} &
-%  \multicolumn{1}{c|}{} &
-%  \multicolumn{1}{c|}{} \\ \hline
-%\multicolumn{1}{|l|}{} &
-%   &
-%   &
-%   \\ \hline
-%\multicolumn{1}{|l|}{} &
-%   &
-%   &
-%   \\ \hline
-%\multicolumn{3}{|c|}{SUBTOTAL} &
-%  \multicolumn{1}{c|}{} \\ \hline
-%\rowcolor[HTML]{C0C0C0} 
-%\multicolumn{4}{|c|}{\cellcolor[HTML]{C0C0C0}COSTOS INDIRECTOS} \\ \hline
-%\rowcolor[HTML]{C0C0C0} 
-%Descripción &
-%  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Cantidad} &
-%  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor unitario} &
-%  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total} \\ \hline
-%\multicolumn{1}{|l|}{} &
-%   &
-%   &
-%   \\ \hline
-%\multicolumn{1}{|l|}{} &
-%   &
-%   &
-%   \\ \hline
-%\multicolumn{1}{|l|}{} &
-%   &
-%   &
-%   \\ \hline
-%\multicolumn{3}{|c|}{SUBTOTAL} &
-%  \multicolumn{1}{c|}{} \\ \hline
-%\rowcolor[HTML]{C0C0C0}
-%\multicolumn{3}{|c|}{TOTAL} &
-%   \\ \hline
-%\end{tabularx}%
-%\end{table}
+\begin{table}[htpb]
+\centering
+\begin{tabularx}{\linewidth}{@{}|X|c|r|r|@{}}
+\hline
+\rowcolor[HTML]{C0C0C0} 
+\multicolumn{4}{|c|}{\cellcolor[HTML]{C0C0C0}COSTOS DIRECTOS} \\ \hline
+\rowcolor[HTML]{C0C0C0} 
+ Descripción & Cantidad & Valor unitario & Valor total \\ \hline
+
+ Mano de obra & 630 & u\$s 10,00 & u\$s 6300,00 \\ \hline
+ Módulo desarrollo LAUNCHXL-CC2640R2 & 2 & u\$s 34,80 & u\$s 69,60 \\ \hline
+ Módulo desarrollo ADS1299EEGFE-PDK & 1 & u\$s 238,80 & u\$s 238,80 \\ \hline
+\multicolumn{3}{|c|}{SUBTOTAL} & u\$s 6608,40 \\ \hline
+\rowcolor[HTML]{C0C0C0} 
+\multicolumn{4}{|c|}{\cellcolor[HTML]{C0C0C0}COSTOS INDIRECTOS} \\ \hline
+\rowcolor[HTML]{C0C0C0} 
+ Descripción & Cantidad & Valor unitario & Valor total \\ \hline
+
+ Costos indirectos, estimados como 20\% de los los costos directos & 1 & u\$s 1321,68  & u\$s 1321,68  \\ \hline
+
+\multicolumn{3}{|c|}{SUBTOTAL} & u\$s 1321,68 \\ \hline
+\rowcolor[HTML]{C0C0C0}
+\multicolumn{3}{|c|}{TOTAL} & u\$s 7930,08   \\ \hline
+\end{tabularx}%
+\end{table}
 
 
 \section{13. Gestión de riesgos}
