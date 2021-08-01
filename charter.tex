@@ -73,8 +73,10 @@ Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios 
 2.0      & Se agregan supuestos en la sección 5 \newline
 		   Se completa hasta la sección 9 inclusive				 & 13/07/2021 \\ \hline
 3.0      & Se agregan requerimientos de documentación \newline
-		   Se completa hasta el punto 12 inclusive                & 26/07/2021 \\ \hline
-%4      & Se completa el plan	                                 & dd/mm/aaaa \\ \hline
+		   Se completa hasta el punto 12 inclusive               & 26/07/2021 \\ \hline
+4.0      &  Se agrega un item en la sección 4 \newline
+			Se agrega un item en la sección 5 \newline
+            Se completa el plan	                                 & 02/08/2021 \\ \hline
 \end{tabularx}
 \end{table}
 
@@ -115,16 +117,16 @@ Se adjunta a esta acta la planificación inicial.
 \label{sec:descripcion}
 
 
-La Neurofisiología es una rama de las neurociencias, que se encarga del estudio funcional de la actividad bioeléctrica del sistema nervioso central, periférico y autonómico, mediante la utilización de equipos y técnicas de análisis avanzado, como la Electroencefalografía (EEG), la Electromiografía (EMG), los Potenciales Evocados (PE), la Polisomnografía (PSG) y otras nuevas técnicas como el neuromonitoreo (NM) o la medición de profundidad de anestésica (MPA). En el país hay al menos 4 empresas que diseñan y fabrican este equipamiento no existiendo un caso similar de competencia en otros países de la región. El costo de desarrollar un equipamiento médico siempre fue elevado. Hace ya muchos años que se implementan regulaciones a los productos que son cada vez mas exigentes en materia de seguridad y eficacia. Sumado a esto los cambios tecnológicos en electrónica y comunicaciones, causan que las empresas locales no puedan seguir esa evolución por ser proyectos económicamente inviables, dejando que sus productos con diseños obsoletos sean paulatinamente expulsados del mercado por su pobre demanda. 
+La Neurofisiología es una rama de las neurociencias, que se encarga del estudio funcional de la actividad bioeléctrica del sistema nervioso central, periférico y autonómico, mediante la utilización de equipos y técnicas de análisis avanzado, como la Electroencefalografía (EEG), la Electromiografía (EMG), los Potenciales Evocados (PE), la Polisomnografía (PSG) y otras nuevas técnicas como el neuromonitoreo (NM) o la medición de profundidad de anestesia (MPA). En el país hay al menos 4 empresas que diseñan y fabrican este equipamiento no existiendo un caso similar de competencia en otros países de la región. El costo de desarrollar un equipamiento médico siempre fue elevado. Hace ya muchos años que se implementan regulaciones a los productos que son cada vez mas exigentes en materia de seguridad y eficacia. Sumado a esto los cambios tecnológicos en electrónica y comunicaciones, causan que las empresas locales no puedan seguir esa evolución por ser proyectos económicamente inviables, dejando que sus productos con diseños obsoletos sean paulatinamente expulsados del mercado por su pobre demanda. 
 
-El proyecto de investigación ''C2-ING-066 Herramientas de uso comunitario para el desarrollo de la industria de Tecnología Neurofisiológica" de la UNLaM propone generar una plataforma de adquisición de señales neurofisiológicas, que sea de uso común para todos los fabricantes de equipos del subsector, para investigación en las universidades y para el eventual desarrollo de nuevos productos y nuevas empresas tecnológicas. El alcance de la plataforma facilitaría el cumplimiento de los requisitos regulatorios; como los de seguridad, análisis de riesgos y compatibilidad electromagnética, dejando a cargo del fabricante la adecuación de ergonomía y usabilidad para cada uso previsto. La existencia de un dispositivo de uso común cuyo costo de diseño, manufactura y ensayos se amortiza entre varios fabricantes, da la posibilidad de destinar mas recursos en actividades que generen un mayor valor agregado, como software más complejo, innovación en algoritmos o interfaces más eficientes y seguras, potenciando de esta manera al subsector industrial en particular y al de las neurociencias en general. En el marco de ese proyecto nace esta propuesta para darle vida al primer prototipo que se tiene armado pero que le falta la programación del sistema embebido.
+El proyecto de investigación ''C2-ING-066 Herramientas de uso comunitario para el desarrollo de la industria de Tecnología Neurofisiológica" de la UNLaM propone generar una plataforma de adquisición de señales neurofisiológicas, que sea de uso común para todos los fabricantes de equipos del subsector, para investigación en las universidades y para el eventual desarrollo de nuevos productos y nuevas empresas tecnológicas. El alcance de la plataforma facilitaría el cumplimiento de los requisitos regulatorios, como los de seguridad, análisis de riesgos y compatibilidad electromagnética, dejando a cargo del fabricante la adecuación de ergonomía y usabilidad para cada uso previsto. La existencia de un dispositivo de uso común cuyo costo de diseño, manufactura y ensayos se amortiza entre varios fabricantes, da la posibilidad de destinar mas recursos en actividades que generen un mayor valor agregado, como software más complejo, innovación en algoritmos o interfaces más eficientes y seguras. De esta manera se potencia al subsector industrial en particular y al de las neurociencias en general. En el marco de ese proyecto nace esta propuesta para darle vida al primer prototipo que se tiene armado pero que le falta la programación del sistema embebido.
 
 El dispositivo de adquisición de señales neurofisiológicas a desarrollar, a partir de ahora llamado DASN, será parte de un sistema médico, por lo que el firmware se debe desarrollar cumpliendo los estandares de tal industria. En la figura \ref{fig:diagBloquesSistema} se puede ver un diagrama en bloques del sistema. Se observa que el sistema estará formado por un equipo de registro, por el DASN y eventualmente por un estimulador externo. 
 
 \begin{figure}[htpb]
 \centering 
 \includegraphics[width=0.94\textwidth]{./Figuras/DiagramaEnBloquesDASN.pdf}
-\caption{Diagrama en bloques del sistema}
+\caption{Diagrama en bloques del sistema.}
 \label{fig:diagBloquesSistema}
 \end{figure}
 
@@ -153,6 +155,10 @@ Orientador    & \cosupname	      & \pertecosupname   & Codirector trabajo final 
 \end{tabularx}
 \end{table}
 
+\begin{itemize}
+	\item Dr. Ing. Diego Coulombie: Tiene experiencia en la redacción de documentos académicos. Puede ayudar en la elaboración de la memoria descriptiva final del proyecto.
+	\item Ing. Ariel Gentile: Tiene experiencia en programación. Puede ayudar en el desarrollo de los módulos de software.
+\end{itemize}
 
 \section{3. Propósito del proyecto}
 \label{sec:proposito}
@@ -166,14 +172,15 @@ El presente proyecto incluye:
 \begin{itemize}
 	\item Diseño del firmware embebido del DASN.
 	\item Diseño del protocolo de comunicación entre DASN y equipo de registro.
-	\item Documentación acorde a ISO 62304.
+	\item Documentación acorde a norma ISO 62304.
 	\item Software de prueba para simular un equipo de registro y probar el DASN.
 \end{itemize}
 
 El presente proyecto no incluye:
 \begin{itemize}
 	\item Diseño de hardware.
-	\item Filtrado digital de las señales adquiridas
+	\item Filtrado digital de las señales adquiridas.
+	\item Validación de norma ISO 62304.
 \end{itemize}
 
 
@@ -186,6 +193,7 @@ Para el desarrollo del presente proyecto se supone que:
 	\item El protocolo de comunicación entre el DASN y el equipo de registro es de libre diseño.
 	\item El DASN y el equipo de registro estarán siempre cerca por lo que no hay requisitos de alcance en la comunicación inalámbrica.
 	\item El hardware no cambiará durante el desarrollo del proyecto.
+	\item La validación de la norma ISO 62304 en laboratorio acreditado queda a cargo del cliente.
 \end{itemize}
 
 \section{6. Requerimientos}
@@ -249,7 +257,7 @@ Se deben evaluar los siguientes aspectos de cada historia de usuario con una esc
 	\item \textbf{Incertidumbre} (nivel de riesgo que involucra realizar la tarea).
 \end{itemize}	
 
-Finalmente se determina el \textit{story point} realizando la siguiente operación:
+Finalmente se determinan los \textit{story points} realizando la siguiente operación:
 
 \textbf{\textit{Story points}} = Dificultad x Complejidad x Incertidumbre
 
@@ -313,24 +321,8 @@ Los entregables del proyecto son:
 	\item Código fuente del firmware.
 	\item Código fuente del Software de prueba.
 	\item Documentación acorde a ISO 62304.
-	\item Informe final
+	\item Informe final.
 \end{itemize}
-
-%
-%\begin{consigna}{red}
-%
-%Los entregables del proyecto son (ejemplo):
-%
-%\begin{itemize}
-%	\item Manual de uso
-%	\item Diagrama de circuitos esquemáticos
-%	\item Código fuente del firmware
-%	\item Diagrama de instalación
-%	\item Informe final
-%	\item etc...
-%\end{itemize}
-%
-%\end{consigna}
 
 \section{9. Desglose del trabajo en tareas}
 \label{sec:wbs}
@@ -371,9 +363,9 @@ En cada grupo de tareas se indica el subtotal de horas correspondiente al mismo.
 \item \textbf{Cierre del proyecto (110 hs)}
 	\begin{enumerate}
 	\item Pruebas de validación (40 hs)
-	\item Informes de avance del proyecto (10 hs)
+	\item Confección de informes de avance del proyecto (10 hs)
 	\item Presentaciones al cliente (10 hs)
-	\item Memoria descriptiva final del proyecto  (40 hs)
+	\item Elaboración de la memoria descriptiva final del proyecto  (40 hs)
 	\item Presentación final del proyecto (10 hs)
 	\end{enumerate}
 \end{enumerate}
@@ -384,12 +376,10 @@ En cada grupo de tareas se indica el subtotal de horas correspondiente al mismo.
 \section{10. Diagrama de Activity On Node}
 \label{sec:AoN}
 
-
-
 \begin{figure}[htpb]
 \centering 
 \includegraphics[width=0.75\textwidth]{./Figuras/DASNActivityonNode.pdf}
-\caption{Diagrama de \textit{Activity on Node}}
+\caption{Diagrama de \textit{Activity on Node.}}
 \label{fig:AoN}
 \end{figure}
 
@@ -421,8 +411,8 @@ En cada grupo de tareas se indica el subtotal de horas correspondiente al mismo.
  Descripción & Cantidad & Valor unitario & Valor total \\ \hline
 
  Mano de obra & 630 & u\$s 10,00 & u\$s 6300,00 \\ \hline
- Módulo desarrollo LAUNCHXL-CC2640R2 & 2 & u\$s 34,80 & u\$s 69,60 \\ \hline
- Módulo desarrollo ADS1299EEGFE-PDK & 1 & u\$s 238,80 & u\$s 238,80 \\ \hline
+ Módulo de desarrollo LAUNCHXL-CC2640R2 & 2 & u\$s 34,80 & u\$s 69,60 \\ \hline
+ Módulo de desarrollo ADS1299EEGFE-PDK & 1 & u\$s 238,80 & u\$s 238,80 \\ \hline
 \multicolumn{3}{|c|}{SUBTOTAL} & u\$s 6608,40 \\ \hline
 \rowcolor[HTML]{C0C0C0} 
 \multicolumn{4}{|c|}{\cellcolor[HTML]{C0C0C0}COSTOS INDIRECTOS} \\ \hline
@@ -441,102 +431,285 @@ En cada grupo de tareas se indica el subtotal de horas correspondiente al mismo.
 \section{13. Gestión de riesgos}
 \label{sec:riesgos}
 
-%\begin{consigna}{red}
-%a) Identificación de los riesgos (al menos cinco) y estimación de sus consecuencias:
-% 
-%Riesgo 1: detallar el riesgo (riesgo es algo que si ocurre altera los planes previstos de forma negativa)
-%\begin{itemize}
-%	\item Severidad (S): mientras más severo, más alto es el número (usar números del 1 al 10).\\
-%	Justificar el motivo por el cual se asigna determinado número de severidad (S).
-%	\item Probabilidad de ocurrencia (O): mientras más probable, más alto es el número (usar del 1 al 10).\\
-%	Justificar el motivo por el cual se asigna determinado número de (O). 
-%\end{itemize}   
-%
-%Riesgo 2:
-%\begin{itemize}
-%	\item Severidad (S): 
-%	\item Ocurrencia (O):
-%\end{itemize}
-%
-%Riesgo 3:
-%\begin{itemize}
-%	\item Severidad (S): 
-%	\item Ocurrencia (O):
-%\end{itemize}
-%
-%
-%b) Tabla de gestión de riesgos:      (El RPN se calcula como RPN=SxO)
-%
-%\begin{table}[htpb]
-%\centering
-%\begin{tabularx}{\linewidth}{@{}|X|c|c|c|c|c|c|@{}}
-%\hline
-%\rowcolor[HTML]{C0C0C0} 
-%Riesgo & S & O & RPN & S* & O* & RPN* \\ \hline
-%       &   &   &     &    &    &      \\ \hline
-%       &   &   &     &    &    &      \\ \hline
-%       &   &   &     &    &    &      \\ \hline
-%       &   &   &     &    &    &      \\ \hline
-%       &   &   &     &    &    &      \\ \hline
-%\end{tabularx}%
-%\end{table}
-%
-%Criterio adoptado: 
-%Se tomarán medidas de mitigación en los riesgos cuyos números de RPN sean mayores a...
-%
-%Nota: los valores marcados con (*) en la tabla corresponden luego de haber aplicado la mitigación.
-%
-%c) Plan de mitigación de los riesgos que originalmente excedían el RPN máximo establecido:
-% 
-%Riesgo 1: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
-%  Nueva asignación de S y O, con su respectiva justificación:
-%  - Severidad (S): mientras más severo, más alto es el número (usar números del 1 al 10).
-%          Justificar el motivo por el cual se asigna determinado número de severidad (S).
-%  - Probabilidad de ocurrencia (O): mientras más probable, más alto es el número (usar del 1 al 10).
-%          Justificar el motivo por el cual se asigna determinado número de (O).
-%
-%Riesgo 2: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
-% 
-%Riesgo 3: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
-%
-%\end{consigna}
+Criterio para ponderar los riesgos:
+\begin{itemize}
+	\item Severidad (S): Rango de 1 a 10. Mientras más severo, más alto es el número.
+	\item Probabilidad de ocurrencia (O): Rango de 1 a 10. Mientras más probable, más alto es el número.
+\end{itemize}
+
+\textbf{a)} A continuación se listan los riesgos asociados al proyecto:
+
+\begin{enumerate} 
+	\item[] \textbf{Riesgo 1:} Retraso en la fecha de finalización del proyecto.
+	\begin{itemize}
+		\item \textbf{Severidad (10):} Implica incumplimiento con el cliente y la no aprobación de la CESE.
+		\item \textbf{Ocurrencia (5):} El responsable del proyecto no posee experiencia en la programación de sistemas embebidos por lo que la ejecución de las tareas puede llevar más tiempo del planificado. 
+	\end{itemize} 
+
+	\item[] \textbf{Riesgo 2:} Errores en el diseño del hardware impiden probar el firmware.
+	\begin{itemize}
+		\item \textbf{Severidad (7):} La falta de prototipo demora las pruebas de validación.
+		\item \textbf{Ocurrencia (7):} Quienes desarrollaron el hardware no tenían experiencia en el desarrollo de equipos con el MCU seleccionado ni con equipos inalámbricos.
+	\end{itemize} 
+
+	\item[] \textbf{Riesgo 3:} Daños en el prototipo de hardware durante el desarrollo.
+	\begin{itemize}
+		\item \textbf{Severidad (7):} La falta de prototipo demora las pruebas de validación.
+		\item \textbf{Ocurrencia (2):} Existen 3 prototipos armados por lo que la probabilidad de quedarse sin prototipo para las pruebas es baja.
+	\end{itemize} 
+
+	\item[] \textbf{Riesgo 4:} No cumplir con todos los requerimientos.
+	\begin{itemize}
+		\item \textbf{Severidad (9):} El producto final no funcionará como se espera.
+		\item \textbf{Ocurrencia (5):} El responsable del proyecto no posee experiencia en la programación de sistemas embebidos por lo que la ejecución de las tareas puede llevar más tiempo del planificado. 
+	\end{itemize} 
+
+	\item[] \textbf{Riesgo 5:} El rendimiento del hardware seleccionado no es suficiente para cumplir con todos los requisitos.
+	\begin{itemize}
+		\item \textbf{Severidad (9):} El producto final no funcionará como se espera. 
+		\item \textbf{Ocurrencia (2):} Luego de analizar las hojas de datos de los principales componentes y ver los ejemplos de aplicación del fabricante se infiere una baja probabilidad de ocurrencia de este riesgo.
+	\end{itemize}
+\end{enumerate}
+
+\textbf{b)} Tabla de gestión de riesgos: (El RPN se calcula como RPN = S x O)
+
+\begin{table}[htpb]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+\rowcolor[HTML]{C0C0C0} 
+Riesgo & S & O & 			RPN			 		  & S* & O* & RPN* \\ \hline
+1 & 10 & 5 & \textcolor{red}{50} & 10 & 3  &  \textcolor[HTML]{009900}{30} \\ \hline
+2      & 7  & 7 & \textcolor{red}{49} & 5 & 5  &  \textcolor[HTML]{009900}{25} \\ \hline
+3      & 7  & 2 & \textcolor[HTML]{009900}{14} &  &  & \\ \hline
+4      & 9  & 5 & \textcolor{red}{45} & 9 & 3  &  \textcolor[HTML]{009900}{27} \\ \hline
+5      & 9  & 2 & \textcolor{red}{18} &  &   & \\ \hline
+\end{tabular}
+\end{table}
+
+Criterio adoptado: 
+Se tomarán medidas de mitigación en los riesgos cuyos números de RPN sean mayores a 30.
+
+Nota: los valores marcados con (*) en la tabla corresponden luego de haber aplicado la mitigación.
+
+\textbf{c)} Plan de mitigación de los riesgos que originalmente excedían el RPN máximo establecido:
+
+\begin{enumerate} 
+	\item[] \textbf{Riesgo 1:} 
+	
+	\textbf{Plan de mitigación:} Se efectuará un seguimiento semanal del grado de avance de las tareas respecto a la planificación para detectar retrasos tempranos.
+	\begin{itemize}
+		\item \textbf{Severidad (10):} La severidad del riesgo no cambia con la medida adoptada.
+		\item \textbf{Ocurrencia (3):} Al detectarse un retraso en forma temprana se pueden aumentar los esfuerzos para cumplir con la planificación.
+	\end{itemize} 
+	\item[] \textbf{Riesgo 2:} 
+
+	\textbf{Plan de mitigación:} Se comprarán placas de desarrollo de los principales módulos.
+	\begin{itemize}
+		\item \textbf{Severidad (5):} Con las placas de desarrollo se pueden probar la mayoría de los requisitos.
+		\item \textbf{Ocurrencia (5):} Al tener otra alternativa para probar el firmware la probabilidad de no poder probarlo baja.
+	\end{itemize} 
+	\item[] \textbf{Riesgo 4:} 
+	
+	\textbf{Plan de mitigación:} Se planifican las tareas mas complejas y que mayor incertidumbre dan al comienzo del proyecto para tener margen de acción ante problemas para su ejecución.
+	\begin{itemize}
+		\item \textbf{Severidad (9):} La severidad del riesgo no cambia con la medida adoptada.
+		\item \textbf{Ocurrencia (3):} Al detectarse un retraso en forma temprana se pueden aumentar los esfuerzos para cumplir con la planificación.
+	\end{itemize} 
+
+\end{enumerate}
+
 
 
 \section{14. Gestión de la calidad}
 \label{sec:calidad}
 
-%\begin{consigna}{red}
-%Para cada uno de los requerimientos del proyecto indique:
-%\begin{itemize} 
-%\item Req \#1: copiar acá el requerimiento.
-%
-%\begin{itemize}
-%	\item Verificación para confirmar si se cumplió con lo requerido antes de mostrar el sistema al cliente. Detallar 
-%	\item Validación con el cliente para confirmar que está de acuerdo en que se cumplió con lo requerido. Detallar  
-%\end{itemize}
-%
-%\end{itemize}
-%
-%Tener en cuenta que en este contexto se pueden mencionar simulaciones, cálculos, revisión de hojas de datos, consulta con expertos, mediciones, etc.  Las acciones de verificación suelen considerar al entregable como ``caja blanca'', es decir se conoce en profundidad su funcionamiento interno.  En cambio, las acciones de validación suelen considerar al entregable como ``caja negra'', es decir, que no se conocen los detalles de su funcionamiento interno.
-%
-%\end{consigna}
+\begin{enumerate}
+	\item \textbf{Requerimientos de interfaces externas}
+		\begin{enumerate}
+			\item El software deberá comunicarse con el equipo de registro utilizando una interfaz BLE 5.0.
+			
+			\textbf{Verificación:} Se verificarán las librerías y módulos de software utilizados.
+			
+			\textbf{Validación:} Pruebas de sistema sobre el producto final.
+			\item El software deberá comunicarse con el equipo de registro utilizando una interfaz RS485. 
+			
+			\textbf{Verificación:} Se verificarán las librerías y módulos de software utilizados.
+			
+			\textbf{Validación:} Pruebas de sistema sobre el producto final.
+			\item El software deberá indicar mediante el led1 que está transmitiendo las señales adquiridas de forma inalámbrica o cableada. 
+			
+			\textbf{Verificación:} Pruebas unitarias y de integración sobre las funciones asociadas. Inspección visual. 
+			
+			\textbf{Validación:} Pruebas de sistema sobre el producto final.  Inspección visual.
+			\item El software deberá indicar mediante el led2 si está encendido o apagado. También deberá indicar con el mismo led2 si entra en el modo pairing BLE.
+			
+			\textbf{Verificación:} Pruebas unitarias y de integración sobre las funciones asociadas. Inspección visual.
+			
+			\textbf{Validación:} Pruebas de sistema sobre el producto final. Inspección visual.
+			\item El software deberá manejar una salida para sincronizar la adquisición con un estimulador externo (dispositivo externo como slave). La salida deberá poder configurarse entre normal bajo y normal alto. El pulso deberá poder configurarse entre 5 anchos de pulso diferentes (0,1 ms; 0,5 ms; 1 ms; 5 ms; 10 ms). 
+			
+			\textbf{Verificación:} Pruebas unitarias y de integración sobre las funciones asociadas. 			
+			
+			\textbf{Validación:}  Pruebas de sistema sobre el producto final. Medición con osciloscopio sobre el producto final.
+			\item El software deberá manejar una entrada para sincronizar la adquisición con un estimulador externo (dispositivo externo como master). La detección deberá ser por flanco y se deberá poder configurar si el flanco es de subida o de bajada.
+			
+			\textbf{Verificación:} Pruebas unitarias y de integración sobre las funciones asociadas. 			
+			
+			\textbf{Validación:}  Pruebas de sistema sobre el producto final. Se inyectará un pulso de sincronismo sobre el producto final.
+			\item El software deberá manejar el pulsador que servirá para encender el dispositivo y para realizar el pairing BLE.
+			
+			\textbf{Verificación:} Pruebas unitarias y de integración sobre las funciones asociadas. 
+			
+			\textbf{Validación:} Pruebas de sistema sobre el producto final. Se probará el funcionamiento del pulsador.
+			\item El software deberá generar la señal de impedancia para los canales de potenciales evocados.
+			
+			\textbf{Verificación:} Se medirá con osciloscopio la señal de impedancia.
+			
+			\textbf{Validación:} Pruebas de sistema sobre el producto final. Se colocarán resistencias en los electrodos para medir la impedancia.
+			\item El software deberá medir el estado de las baterías con el ADC interno del MCU.
+			
+			\textbf{Verificación:} Se conectará una fuente de tensión variable par verificar la medición de tensión de las baterías.
+			
+			\textbf{Validación:} Pruebas de sistema sobre el producto final. Se leerá la indicación del software y se contrastará midiendo las baterías con un multímetro.
+		\end{enumerate}
+	\item \textbf{Requerimientos funcionales}
+		\begin{enumerate}
+			\item El software deberá configurar la frecuencia de muestreo de la señal adquirida entre 7 diferentes valores ( el ADC de ''EEG-FrontEnd\_v1.x.0.SchDoc” ofrece 65 Hz, 131 Hz, 262 Hz, 524 Hz, 1048 Hz, 2096 Hz y 4193 Hz).
+			
+			\textbf{Verificación:} Pruebas unitarias y de integración sobre las funciones asociadas.
+			
+			\textbf{Validación:} Pruebas de sistema sobre el producto final. Se revisarán los archivos adquiridos por el producto final.
+			\item El software deberá poder adquirir de 1 a 8 canales simultáneos.
+			
+			\textbf{Verificación:} Pruebas unitarias y de integración sobre las funciones asociadas.
+			
+			\textbf{Validación:} Pruebas de sistema sobre el producto final. Inspección visual en el dispositivo de registro.
+			\item Mediante comandos recibidos por BLE 5.0 o RS485 el software deberá poder iniciar y parar la adquisición.
+			
+			\textbf{Verificación:} Pruebas unitarias y de integración sobre las funciones asociadas.
+			
+			\textbf{Validación:} Pruebas de sistema sobre el producto final. Inspección visual en el dispositivo de registro.
+			\item El software deberá configurar la ganancia de amplificación de cada canal entre 7 diferentes valores ( el ADC de ''EEG-FrontEnd\_v1.x.0.SchDoc” ofrece 1, 2, 4, 6, 8, 12 y 24).
+			
+			\textbf{Verificación:} Pruebas unitarias y de integración sobre las funciones asociadas.
+			
+			\textbf{Validación:} Pruebas de sistema sobre el producto final.
+			\item El software deberá configurar el ADC para usar una tipología de entrada diferencial o referencial.
+			
+			\textbf{Verificación:} Pruebas unitarias y de integración sobre las funciones asociadas.
+			
+			\textbf{Validación:} Pruebas de sistema sobre el producto final. Se inyectará señal en las entradas según configuración seleccionada.
+			\item El software deberá medir la impedancia de los electrodos con una señal de medición de impedancia cuya frecuencia deberá ser de 7,8 Hz o 31,2 Hz.
+			
+			\textbf{Verificación:} Se medirá con osciloscopio la señal de medición de impedancia.
+			
+			\textbf{Validación:} Pruebas de sistema sobre el producto final.
+			\item El software deberá seleccionar a qué electrodos le inyecta la señal de medición de impedancia.
+			
+			\textbf{Verificación:} Pruebas unitarias y de integración sobre las funciones asociadas. Se medirá con osciloscopio la señal de medición de impedancia.
+			
+			\textbf{Validación:} Pruebas de sistema sobre el producto final. Inspección visual en el dispositivo de registro.
+			\item El software deberá seleccionar para cada electrodo si usa la señal de impedancia generada por el ADC o la generada por el MCU.
+			
+			\textbf{Verificación:} Pruebas unitarias y de integración sobre las funciones asociadas. Se medirá con osciloscopio la señal de medición de impedancia.
+			
+			\textbf{Validación:}  Pruebas de sistema sobre el producto final. Se colocarán resistencias en los electrodos para medir la impedancia.
+			\item El software deberá enviar la siguiente información de autodiagnóstico: temperatura del ADC, valor de las tensiones del ADC y frecuencia del clock del ADC.
+			
+			\textbf{Verificación:} Pruebas unitarias y de integración sobre las funciones asociadas.
+			
+			\textbf{Validación:}  Pruebas de sistema sobre el producto final.
+			\item El software deberá prender y apagar el equipo con una pulsación corta del botón, pulsación menor a 1 segundo.
+			
+			\textbf{Verificación:} Pruebas unitarias y de integración sobre las funciones asociadas.
+			
+			\textbf{Validación:} Pruebas de sistema sobre el producto final. Se probará el funcionamiento del botón.
+			\item El software deberá entrar en el modo de apareo de la comunicación BLE con una pulsación larga del botón, pulsación mayor a 4 segundos.
+			
+			\textbf{Verificación:} Pruebas unitarias y de integración sobre las funciones asociadas.
+			
+			\textbf{Validación:} Pruebas de sistema sobre el producto final. Se probará el funcionamiento del botón.
+			\item Luego de 1 minuto de inactividad, el software deberá entrar a un modo de bajo consumo de energía. Para esto deberá apagar el ADC, el transceiver RS485 y la alimentación de todos los periféricos externos al MCU.
+			
+			\textbf{Verificación:} Pruebas unitarias y de integración sobre las funciones asociadas.
+			
+			\textbf{Validación:} Pruebas de sistema sobre el producto final. Medición del consumo.
+			\item El software deberá manejar una comunicación RS485 hasta 3 MBd.
+			
+			\textbf{Verificación:} Pruebas unitarias y de integración sobre las funciones asociadas.
+			
+			\textbf{Validación:} Pruebas de sistema sobre el producto final. Se probará la comunicación a 3MBd.
+			\item El software deberá poder recibir comandos mientras está transmitiendo las señales adquiridas.
+			
+			\textbf{Verificación:} Pruebas unitarias y de integración sobre las funciones asociadas.
+			
+			\textbf{Validación:} Pruebas de sistema sobre el producto final. Se enviarán comandos mientras se adquiere señal. 
+
+		\end{enumerate}
+	\item \textbf{Requerimientos de documentación}
+		\begin{enumerate}
+			\item La documentación debe cumplir los requisitos de la norma ISO 62304.
+			
+			\textbf{Verificación:} Por inspección, se completará un checklist.
+			
+			\textbf{Validación:} No esta dentro de los alcances del proyecto.
+			\item Toda la documentación del proyecto se almacenará bajo un sistema de control de versiones GIT. 
+			
+			\textbf{Verificación:} Por inspección del repositorio.
+			
+			\textbf{Validación:} Por inspección del repositorio.
+			\item Toda la documentación del código se realizará utilizando la herramienta Doxygen.
+			
+			\textbf{Verificación:} Por inspección del código fuente.
+			
+			\textbf{Validación:} Por inspección de la página web generada.
+			\item Se deberá realizar un informe de avance del proyecto en el séptimo mes de trabajo
+			
+			\textbf{Verificación:} Por inspección del informe.
+			
+			\textbf{Validación:} Por inspección del informe.
+			\item Se deberá realizar la memoria técnica del trabajo final con la plantilla elaborada por la cátedra de gestión de proyecto.
+					
+			\textbf{Verificación:} Por inspección de la memoria.
+			
+			\textbf{Validación:} Por inspección de la memoria.
+	\end{enumerate}
+
+\end{enumerate}
+
 
 \section{15. Procesos de cierre}    
 \label{sec:cierre}
 
-%\begin{consigna}{red}
-%Establecer las pautas de trabajo para realizar una reunión final de evaluación del proyecto, tal que contemple las siguientes actividades:
-%
-%\begin{itemize}
-%	\item Pautas de trabajo que se seguirán para analizar si se respetó el Plan de Proyecto original:
-%	 - Indicar quién se ocupará de hacer esto y cuál será el procedimiento a aplicar. 
-%	\item Identificación de las técnicas y procedimientos útiles e inútiles que se emplearon, y los problemas que surgieron y cómo se solucionaron:
-%	 - Indicar quién se ocupará de hacer esto y cuál será el procedimiento para dejar registro.
-%	\item Indicar quién organizará el acto de agradecimiento a todos los interesados, y en especial al equipo de trabajo y colaboradores:
-%	  - Indicar esto y quién financiará los gastos correspondientes.
-%\end{itemize}
-%
-%\end{consigna}
+
+Al finalizar el proyecto se realizarán las siguientes actividades:
+\begin{enumerate}
+	\item Informe de evaluación final del proyecto, para lo cual se analizarán los siguientes aspectos:
+		\begin{itemize}
+			\item Si se cumplió con la fecha de finalización del proyecto.
+			\item Si se tuvieron que utilizar más o menos recursos de los planificados para cumplir con el plan.
+			\item Si se pudo cumplir con todos los requisitos planificados.
+			\item Si se debieron tomar acciones no planificadas.
+			\item Si aparecieron riesgos no contemplados originalmente.
+			\item Si surgieron problemas y como se solucionaron.
+			\item Nivel de satisfacción del cliente.
+		\end{itemize}
+	\item Transferencia de los entregables al cliente.
+		\begin{itemize}
+			\item Se coordinará una reunión con el cliente para tal fin.
+		\end{itemize}
+	\item Presentación pública en el marco de la CESE.
+
+	\item Acto de cierre.
+		\begin{itemize}
+			\item Se realizará un acto de cierre con el objetivo de agradecer a todas las personas involucradas en el proyecto, miembros del jurado, docentes y autoridades de la CESE.
+		\end{itemize}
+
+\end{enumerate}
+
+
+Todas las actividades del proceso de cierre estarán a cargo del responsable del proyecto.
 
 
 \end{document}
